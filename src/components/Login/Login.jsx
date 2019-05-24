@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.css';
+import '../../styles/form.css';
 
 export default class Login extends React.Component {
    state = {
@@ -64,6 +64,7 @@ export default class Login extends React.Component {
          if (response.status !== 200) throw response;
          localStorage.setItem("x-auth-token", response.headers.get('x-auth-token'));
          response = await response.json();
+         console.log(response);
       } catch (err) {
          console.log(err);
          if ([404, 400].includes(err.status)) {
@@ -73,7 +74,7 @@ export default class Login extends React.Component {
                password: '',
                isDisable: true,
                errors: {
-                  email: error,
+                  email: '',
                   password: error
                }
             });
@@ -83,7 +84,7 @@ export default class Login extends React.Component {
 
    render() {
       return (
-         <section id='login'>
+         <section id='login' className="form">
             <div>
                <h2>Panel logowania</h2>
                <form onSubmit={this.handleClick}>   

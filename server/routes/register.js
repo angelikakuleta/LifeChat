@@ -19,7 +19,9 @@ router.post('/', async (req, res) => {
 
    try {
       const response = await user.save();
-      res.header('x-auth-token', response.genToken()).status(200).send(response);
+      const { name, email, keywords, skills, gold, exp } = response;
+
+      res.header('x-auth-token', response.genToken()).status(200).send({ name, email, keywords, skills, gold, exp });
    } catch (err) {
       console.log(err.message);
       res.status(400).send(err.message);

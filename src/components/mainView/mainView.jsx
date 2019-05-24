@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import CardView from "../Card/Card";
 import "./mainView.css";
 import "../../styles/App.css";
-import io from "socket.io";
+const io = require("socket.io-client");
 
-const socket = io.connnect("http://localhost:3000");
+const socket = io.connect("http://localhost:3001");
 
 export default class MainView extends Component {
   state = {
@@ -23,7 +23,11 @@ export default class MainView extends Component {
       }
     ]
   };
-  componentDidMount() {}
+  componentDidMount() {
+    socket.on("chat", function(data) {
+      this.setState({ quests: [...this.state.quests, data] });
+    });
+  }
 
   createNewCard = el => {
     return (

@@ -7,7 +7,7 @@ import '../styles/ChatView.css';
 export default class ChatView extends Component {
 
    state = {
-      keywords: ['help', 'money'],
+      keywords: ['help', 'money', 'cash', 'hack', 'jfds'],
       name: 'Śmiertelnik_numer_666'
    }
 

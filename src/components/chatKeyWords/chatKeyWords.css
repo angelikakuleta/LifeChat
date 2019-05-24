@@ -1,6 +1,8 @@
 @import '~antd/dist/antd.css';
 
 #ChatKeyWords {
-    
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
 
 }

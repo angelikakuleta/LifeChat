@@ -51,11 +51,16 @@ class MenuViewMobile extends React.Component {
             <Link to="/howTo" />        
             </Menu.Item>
             <Menu.Item key="5">
+            <Icon type="file-word" />
+            <span>Keywords</span>
+            <Link to="/keywords" />
+            </Menu.Item>
+            <Menu.Item key="6">
             <Icon type="setting" />
             <span>Settings</span>
             <Link to="/settings" />
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key="7">
             <Icon type="logout" />
             <span>Log out</span>
             <Link to="/logout" />

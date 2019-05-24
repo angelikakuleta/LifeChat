@@ -1,11 +1,10 @@
 import React from 'react';
 import '../styles/App.css';
+import ChatMessage from './chatMessage/chatMessage'
 
 function App() {
   return (
-    <div className="App">
-      Hello world!
-    </div>
+    <ChatMessage message={'Losowa wiadomość od śmiertelnika'} keywords={['od', 'Losowa', 'nioreg']} />
   );
 }
 

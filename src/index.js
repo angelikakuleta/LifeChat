@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import ChatView from './components/ChatView';
+import './styles/App.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ChatView />, document.getElementById('root'));

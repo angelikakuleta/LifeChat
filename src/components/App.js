@@ -1,14 +1,15 @@
-import React from 'react';
-import '../styles/App.css';
-import Menu from './Menu';
-
+import React from "react";
+import "../styles/App.css";
+import MainView from "./mainView/mainView";
+import Menu from "./Menu";
 
 function App() {
   return (
-    <div className="App">
-      <Menu />
+    <div>
+    <Menu />;
+    <MainView />;
     </div>
-  );
+  )
 }
 
 export default App;

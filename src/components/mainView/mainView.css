@@ -1,0 +1,16 @@
+.mainView {
+  padding: 0;
+}
+
+.mainView__cardList {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainView__cardList-el {
+  width: 80%;
+  margin-top: 20px;
+}

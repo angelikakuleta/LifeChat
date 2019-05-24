@@ -1,5 +1,6 @@
 .mainView {
   padding: 0;
+  background: var(--primary);
 }
 
 .mainView__cardList {

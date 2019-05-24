@@ -1,6 +1,9 @@
+@import "~antd/dist/antd.css";
+
 .mainView {
   padding: 0;
   background: var(--primary);
+  height: 100vh;
 }
 
 .mainView__cardList {
@@ -8,7 +11,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .mainView__cardList-el {

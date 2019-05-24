@@ -1,5 +1,6 @@
 .mainView {
   padding: 0;
+  cursor: pointer;
 }
 
 .mainView__cardList {

@@ -7,7 +7,8 @@ export default class CardView extends Component {
   state = {};
   render() {
     return (
-      <Card className="card" title={this.props.name}>
+      <Card className="card">
+        <p>{this.props.name}</p>
         <p>Data: {this.props.date}</p>
         <p>Priorytet: {this.props.priority}</p>
         <p>Wiadomość: {this.props.message}</p>

@@ -1,6 +1,19 @@
 @import "~antd/dist/antd.css";
-
 .card{
-    background: var(--secondary);
+    background: var(--primarydark);
     border: transparent;
+    border-radius: 10em 0 0 10em;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    padding: 0;
+}
+
+.info {
+    margin: 1em;
+}
+
+.info .name {
 }

@@ -45,7 +45,7 @@ export default class MainView extends Component {
   render() {
     return (
       <section className="mainView">
-        <div className="mainView__menu">Tutaj będzie menu</div>
+        <div className="mainView__menu"></div>
 
         <ul className="mainView__cardList">
           {this.state.quests ? this.state.quests.map(this.createNewCard) : null}

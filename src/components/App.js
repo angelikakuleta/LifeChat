@@ -6,8 +6,8 @@ import Menu from "./Menu";
 function App() {
   return (
     <div>
-    <Menu />;
-    <MainView />;
+    <Menu />
+    <MainView />
     </div>
   )
 }

@@ -1,3 +1,11 @@
+:root {
+  --primary: #62CCA4;
+  --primarydark: #5FB393;
+  --secondary: #E894FF;
+  --secondarydark: #A761BA;
+  --fancy: #FFE7AD;
+}
+
 body {
   margin: 0;
   padding: 0; 

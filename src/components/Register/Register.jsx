@@ -20,7 +20,7 @@ export default class Register extends React.Component {
          error = 'Nazwa powinna posiadać min. 3 znaki';
       else if (e.target.value.length > 50)
          error = 'Dozwolona długość nazwy do 50 znaków';
-      else if (!(/^[\S]$/.test(e.target.value)))
+      else if (!(/^[\S]+$/.test(e.target.value)))
          error = 'Nazwa zawiera niedozwolone znaki';
       else isDisable = false;
 
@@ -94,8 +94,8 @@ export default class Register extends React.Component {
          });
          if (response.status !== 200) throw response;
          localStorage.setItem("x-auth-token", response.headers.get('x-auth-token'));
-         this.props.loginStatus(true);
          response = await response.json();
+         console.log(response);
       } catch (err) {
          console.log(err);
          if ([404, 400].includes(err.status)) {

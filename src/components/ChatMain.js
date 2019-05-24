@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import '../styles/ChatMain.css';
 import ChatMessage from './chatMessage/chatMessage';
-import ChatUserData from './chatUserData';
+
 
 const io = require('socket.io-client');
 
@@ -88,25 +88,23 @@ export default class ChatMain extends Component {
 
    render() {
       return (
-         <Fragment>
-            <ChatUserData name={this.state.handle} email={this.state.handle + '@mycompany.com'} />
-            <section id='chat-main'>
-               <form onSubmit={this.handleClick}>
-                  <div ref={this.chatWindowRef} className='chat-window'>
-                     <div className='output'>
-                        {this.state.output.map(((el, index) => (
-                           <ChatMessage keywords={this.props.keywords} key={index} message={el.message} user={this.state.handle} />
-                        )))}
-                     </div>
-                     <div className='feedback'>{this.state.feedback}</div>
+
+         <section id='chat-main'>
+            <form onSubmit={this.handleClick}>
+               <div ref={this.chatWindowRef} className='chat-window'>
+                  <div className='output'>
+                     {this.state.output.map(((el, index) => (
+                        <ChatMessage keywords={this.props.keywords} key={index} message={el.message} user={this.state.handle} />
+                     )))}
                   </div>
-                  <div className="chat-send">
-                     <input type='text' placeholder='Message' onChange={this.handleChangeMessage} value={this.state.message} />
-                     <input type='submit' value='Send' />
-                  </div>
-               </form>
-            </section>
-         </Fragment>
+                  <div className='feedback'>{this.state.feedback}</div>
+               </div>
+               <div className="chat-send">
+                  <input type='text' placeholder='Message' onChange={this.handleChangeMessage} value={this.state.message} />
+                  <input type='submit' value='Send' />
+               </div>
+            </form>
+         </section>
       );
    }
 

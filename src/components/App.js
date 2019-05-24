@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/App.css';
-import ChatMessage from './chatMessage/chatMessage'
+import ChatMessage from './chatMessage/chatMessage';
+
 
 function App() {
   return (

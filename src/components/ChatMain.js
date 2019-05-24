@@ -92,14 +92,14 @@ export default class ChatMain extends Component {
                <div ref={this.chatWindowRef} className='chat-window'>
                   <div className='output'>
                      {this.state.output.map(((el, index) => (
-                        <ChatMessage keywords={this.props.keywords} key={index} message={el.message} />
+                        <ChatMessage keywords={this.props.keywords} key={index} message={el.message} user={this.state.handle} />
                      )))}
                   </div>
                   <div className='feedback'>{this.state.feedback}</div>
                </div>
                <div className="chat-send">
-                  <input type='text' placeholder='Message' onChange={this.handleChangeMessage} />
-                  <input type='submit' value='Send'/>
+                  <input type='text' placeholder='Message' onChange={this.handleChangeMessage} value={this.state.message} />
+                  <input type='submit' value='Send' />
                </div>
             </form>
          </section>

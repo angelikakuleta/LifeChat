@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import reactStringReplace from 'react-string-replace';
 import './chatMessage.css';
 
@@ -17,7 +17,7 @@ class ChatMessage extends React.Component {
         }
     }
     render() {
-        return <p>{this.toBeRendered}</p>
+        return (<Fragment><p><em>{this.props.user}: </em>{this.toBeRendered}</p></Fragment>)
     }
 }
 

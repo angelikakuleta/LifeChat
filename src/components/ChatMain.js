@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/ChatMain.css';
-const io = require('socket.io-client')
+import ChatMessage from './chatMessage/chatMessage'
+
+const io = require('socket.io-client');
 
 export default class ChatMain extends Component {
 
@@ -90,7 +92,7 @@ export default class ChatMain extends Component {
                <div ref={this.chatWindowRef} className='chat-window'>
                   <div className='output'>
                      {this.state.output.map(((el, index) => (
-                        <p key={index}><strong>{el.handle}: </strong>{el.message}</p>
+                        <ChatMessage keywords={this.props.keywords} key={index} message={el.message} />
                      )))}
                   </div>
                   <div className='feedback'>{this.state.feedback}</div>

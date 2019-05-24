@@ -98,7 +98,7 @@ export default class ChatMain extends Component {
                   <div className='feedback'>{this.state.feedback}</div>
                </div>
                <div className="chat-send">
-                  <input type='text' placeholder='Message' onChange={this.handleChangeMessage} />
+                  <input value={this.state.message} type='text' placeholder='Message' onChange={this.handleChangeMessage} />
                   <input type='submit' value='Send'/>
                </div>
             </form>

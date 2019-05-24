@@ -1,4 +1,4 @@
-hackathon.app
+# LifeChat
 
 In the project directory, you can run:
 

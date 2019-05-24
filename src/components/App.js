@@ -1,12 +1,9 @@
-import React from 'react';
-import '../styles/App.css';
+import React from "react";
+import "../styles/App.css";
+import MainView from "./mainView/mainView";
 
 function App() {
-  return (
-    <div className="App">
-      Hello world!
-    </div>
-  );
+  return <MainView />;
 }
 
 export default App;

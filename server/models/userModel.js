@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
    keywords: { type: Array, default: [] },
    skills: { type: Array, default: [] },
    gold: { type: Number, default: 0 },
-   exp: { type: Number, default: 0 },
+   exp: { type: Number, default: 0 }
 });
 
 userSchema.methods.genToken = () => {
@@ -17,4 +17,4 @@ userSchema.methods.genToken = () => {
 
 const User = mongoose.model('User', userSchema);
 
- module.export = User;
+module.exports = { User };

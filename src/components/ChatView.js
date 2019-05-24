@@ -4,10 +4,14 @@ import '../styles/ChatView.css'
 
 export default class ChatView extends Component {
 
+   state = {
+      keywords: ['help', 'money']
+   }
+
    render() {
       return(
          <div id="chat-view">
-            <ChatMain />
+            <ChatMain keywords={this.state.keywords}/>
          </div>
       )
    }

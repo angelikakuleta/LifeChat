@@ -26,6 +26,13 @@ section{
     background: var(--fancy);
 }
 
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+    border-right: 3px solid var(--primarydark);
+}
+
 li.ant-menu-item.ant-menu-item-selected a::before {
     background: var(--secondary);    
     opacity: 0.5;

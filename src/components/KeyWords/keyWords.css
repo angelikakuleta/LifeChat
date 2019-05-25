@@ -47,6 +47,8 @@
   font-size: 25px;
   padding: 10px 20px;
   margin: 10px 10px;
+  background-color: var(--secondarydark);
+  opacity: 0.85;
 }
 
 .keyWords__form-button {

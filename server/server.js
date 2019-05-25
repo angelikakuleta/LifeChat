@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const register = require('./routes/register');
 const login = require('./routes/login');
-const addKeyword = require('./routes/addKeyword')
+const addKeyword = require('./routes/addKeyword');
+const addGold = require('./routes/addGold');
 
 const app = express();
 app.listen(3001, () => console.log('Lisening on port 3001.'));
@@ -15,3 +16,4 @@ app.use(express.json());
 app.use('/register', register);
 app.use('/login', login);
 app.use('/addKeyword', addKeyword);
+app.use('/addGold', addGold);

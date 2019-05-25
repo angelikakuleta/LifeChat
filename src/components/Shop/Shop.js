@@ -12,9 +12,9 @@ class Shop extends React.Component {
             {name: "theme", price:"54" },
             {name: "theme", price:"54" }
         ],
-        userMoney: "",
+        userMoney: 0,
         itemsBought: []
-        }  
+    }  
 
     async componentDidMount() {
         const token = localStorage.getItem("x-auth-token");
@@ -28,8 +28,8 @@ class Shop extends React.Component {
             headers: requestHeaders
           });
           if (response.status !== 200) throw response;
-          console.log("przyszło");
           response = await response.json();
+            console.log(response);
           this.setState({
             userMoney: response
           });
@@ -39,22 +39,20 @@ class Shop extends React.Component {
       }
 
     handleButtonClick = (e, index) => {
-        if (this.state.items[index].price > this.state.user.money) {
+        if (this.state.items[index].price > this.state.userMoney) {
             alert('You have not enough gold')
         } else {
-            this.setState(prevState => ({
-                user: {
-                    ...prevState.user,
-                    money: this.state.user.money - this.state.items[index].price,
-                    itemsBought:  [...this.state.user.itemsBought, this.state.items[index] ]
-                }
-                }
-            ))
+            this.setState({
+                
+                userMoney: this.state.userMoney - this.state.items[index].price,
+                itemsBought:  [...this.state.itemsBought, this.state.items[index] ]
+            })
         }
     }
 
 
     render() {
+        console.log(`have ${this.state.userMoney} gold`)
         return (
             <div>
                 <div className='shop'>

@@ -7,7 +7,7 @@ class MenuView extends React.Component {
     render() {
     return (
         <Router>
-        <div style={{ width: '100vw' }}>
+        <div style={{ width: '100%' }}>
             <Menu 
             defaultSelectedKeys={['1']} 
             mode="horizontal">

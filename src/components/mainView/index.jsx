@@ -16,18 +16,18 @@ export default class MainView extends Component {
     this.state = {
       handlers: [],
       quests: [
-        {
-          name: "Tomek",
-          message: "Nie mam się z kim napić",
-          priority: "Wysoki",
-          date: "15.10.3016 15:22:15"
-        },
-        {
-          name: "Tomek",
-          message: "Nie mam się z kim napić",
-          priority: "Wysoki",
-          date: "15.10.3016 15:22:15"
-        }
+        // {
+        //   name: "Tomek",
+        //   message: "Nie mam się z kim napić",
+        //   priority: "Wysoki",
+        //   date: "15.10.3016 15:22:15"
+        // },
+        // {
+        //   name: "Tomek",
+        //   message: "Nie mam się z kim napić",
+        //   priority: "Wysoki",
+        //   date: "15.10.3016 15:22:15"
+        // }
 
       ]
     };

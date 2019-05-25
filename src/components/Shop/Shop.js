@@ -1,5 +1,6 @@
 import React from 'react';
 import {ShopItem} from './ShopItem';
+import Avatars from './Avatars';
 import "./Shop.css";
 
 class Shop extends React.Component {
@@ -11,14 +12,35 @@ class Shop extends React.Component {
             {name: "theme", price:"54" },
             {name: "theme", price:"54" }
         ],
-        user: {money: 700, 
-            itemsBought: []
-        } 
-    }
+        userMoney: "",
+        itemsBought: []
+        }  
+
+    async componentDidMount() {
+        const token = localStorage.getItem("x-auth-token");
+        const requestHeaders = {
+          "Content-Type": "application/json; charset=UTF-8",
+          "x-auth-token": token
+        };  
+        try {
+          let response = await fetch(`/addGold`, {
+            method: "get",
+            headers: requestHeaders
+          });
+          if (response.status !== 200) throw response;
+          console.log("przyszło");
+          response = await response.json();
+          this.setState({
+            userMoney: response
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
     handleButtonClick = (e, index) => {
         if (this.state.items[index].price > this.state.user.money) {
-            alert('You have not enough money')
+            alert('You have not enough gold')
         } else {
             this.setState(prevState => ({
                 user: {
@@ -29,16 +51,19 @@ class Shop extends React.Component {
                 }
             ))
         }
-
     }
+
 
     render() {
         return (
-            <div className='shop'>
-            {this.state.items.map((el,index) => 
-            <ShopItem name={el.name} price={el.price} handleClick={(e) => this.handleButtonClick(e, index)} />)
-            }
-            </div>          
+            <div>
+                <div className='shop'>
+                    {this.state.items.map((el,index) => 
+                    <ShopItem name={el.name} key={index} price={el.price} handleClick={(e) => this.handleButtonClick(e, index)} />)
+                    }
+                    <Avatars />
+                </div> 
+            </div>
         );
     }
 }

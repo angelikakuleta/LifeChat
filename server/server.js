@@ -36,3 +36,6 @@ app.use('/register', register);
 app.use('/login', login);
 app.use('/addKeyword', addKeyword);
 app.use('/addGold', addGold);
+
+app.use('/', express.static('public'))
+app.use('/client', express.static('public-client'))

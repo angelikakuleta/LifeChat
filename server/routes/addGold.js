@@ -7,22 +7,22 @@ const { User } = require('../models/userModel');
 router.get('/', auth, async (req, res) => {
     let user;
     user = await User.findById(req.user);
+    if (!user) return res.status(400).send('Invalid email or password.')
     res.json(user.gold);
-
 })
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
     let user;
-    user = await User.findOne({ email: req.body.email.toLowerCase() });
+    user = await User.findById(req.user);
     if (!user) return res.status(400).send('Invalid email or password.')
-    console.log(req);
     try {
-        let user = await User.findOneAndUpdate({ email: req.body.email.toLowerCase() },
+        let user = await User.findByIdAndUpdate(req.user,
             { $inc: { gold: req.body.gold } })
         if (user) {
-            console.log(user);
+            user = await User.findById(req.user);
             res.json(user.gold);
         }
+
     } catch (err) {
         res.status(400)
     }

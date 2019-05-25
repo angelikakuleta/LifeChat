@@ -55,7 +55,7 @@ export default class App extends React.Component {
             this.state.isLogged ? (<Redirect to='/dashboard' />) : (<Login changeLoggedStatus={this.changeLoggedStatus} />)
             )} />
             <Route path="/register" render={() => (
-            this.state.isLogged ? (<Redirect to='/dashboard' />) : (<Register />)
+            this.state.isLogged ? (<Redirect to='/dashboard' />) : (<Register changeLoggedStatus={this.changeLoggedStatus} />)
             )} /> 
             <Route path="/logout" render={() => (
               <Logout changeLoggedStatus={this.changeLoggedStatus} />

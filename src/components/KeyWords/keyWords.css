@@ -1,14 +1,7 @@
-.keyWords {
-  /* margin: 5vh; */
-  height: 95vh;
-  overflow-y: hidden;
-  /* padding: 5vh; */
-}
-
 .keyWords p {
   padding-top: 10px;
-}
 
+}
 .keyWords__form {
   display: flex;
   flex-direction: column;

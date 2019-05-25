@@ -116,19 +116,17 @@ export default class KeyWords extends Component {
             </List>
           </div>
         </div>
-        {this.state.keyWords.length < 5 ? (
-          <form className="keyWords__form" action="">
-            <input
-              className="keyWords__form-input"
-              placeholder="Wpisz zaklęcie"
-              maxlength="10"
-            />
-
-            <button className="keyWords__form-button" onClick={this.saveSkill}>
-              Dodaj zaklęcie
-            </button>
-          </form>
-        ) : null}
+        {this.state.keyWords.length < 5 &&
+        <form className="keyWords__form" action="">
+          <input
+            className="keyWords__form-input"
+            placeholder="Wpisz zaklęcie"
+            maxlength="10"
+          />
+          <button className="keyWords__form-button" onClick={this.saveSkill}>
+            Dodaj zaklęcie
+          </button>
+        </form>}
       </section>
     );
   }

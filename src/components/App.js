@@ -5,8 +5,8 @@ import Shop from "./Shop/Shop";
 import Menu from "./Menu";
 import KeyWords from "./KeyWords/keyWords";
 
-import Login from "./Login/Login";
-import Register from "./Register/Register";
+import Login from './Login/Login';
+import Register from './Register/Register';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Shop />
       <Register />
     </div>
-  );
+  )
 }
 
 export default App;

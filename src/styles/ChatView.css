@@ -16,7 +16,7 @@
 
 }
 
-.output {
+/* .output {
        width: 100%;
        overflow: auto;
        position: static !important;
@@ -29,5 +29,24 @@
    display: block;
    word-wrap: break-word;
    color: white;
+} */
+.output p{
+   color: white;
+   word-wrap: break-word;
+   padding-right: 5%;
+}
+.fa-magic {
+   font-size: 15px;
 }
 
+.ant-typography {
+   font-size: 23px !important;
+}
+
+.empha {
+   color: black;
+}
+
+em {
+   color: var(--secondarydark)
+}

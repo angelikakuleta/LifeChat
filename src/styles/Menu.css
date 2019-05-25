@@ -1,0 +1,9 @@
+section{
+    background: var(--primarydark);
+    border: transparent;
+}
+
+.burger {
+    background: var(--secondary);
+    margin: 0.5em;
+}

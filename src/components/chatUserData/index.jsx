@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Avatar } from 'antd';
 import './chatUserData.css';
-import avatar1 from '../../assets/avatars/pipo-enemy1.png'
+import avatar1 from '../../assets/avatars/pipo-enemy1.png';
+
 
 class ChatUserData extends React.Component {
     constructor(props) {

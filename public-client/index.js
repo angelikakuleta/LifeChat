@@ -10,14 +10,16 @@ nickForm.addEventListener('submit', e => {
 })
 
 const chatWindow = `    
-    <div id="chat-wrapper">
-        <h2 id="welcome"></h2>
-        <div id="chat-window">
-            <div id="output"></div>
-            <div id="feedback"></div>
+    <div class="nick">
+        <div class="chat-container">
+            <div class="site-welcome" id="welcome"></div>
+            <div id="chat-window">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+            <input id="message" type="text" placeholder="Message" />
+            <button id="send">Wyślij</button>
         </div>
-        <input id="message" type="text" placeholder="Message" />
-        <button id="send">Send</button>
     </div>`
 
 
@@ -44,12 +46,13 @@ const initializeChat = (username) => {
      };
 
     // Emit events on button click
-    btn.addEventListener('click', function () {
-        emitMessage();
+    btn.addEventListener('click', e => {
+        //allows to send messages by pressing enter and prevents from sending empty messages
+        if (message.value !== "") emitMessage();
     });
 
     // Emit events on 'Enter" press
-    message.addEventListener('keypress', function (e) {
+    message.addEventListener('keypress', e => {
         socket.emit('typing', username);
 
         //allows to send messages by pressing enter and prevents from sending empty messages
@@ -59,7 +62,14 @@ const initializeChat = (username) => {
     // Listen for events
     socket.on('chat', function (data) {
         feedback.innerHTML = '';
-        output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '</p>';
+        let nickName;
+        if(data.handle === username) {
+            nickName = `<strong style="color:#eb6d21">${data.handle}: </strong>`
+        } else {
+            nickName = `<strong>${data.handle}: </strong>`
+        };
+        output.innerHTML += '<p class="message-box">' + nickName + data.message + '</p>';
+        document.querySelector('p:last-child').scrollIntoView({behavior:"smooth"});
     });
 
     socket.on('typing', function (data) {

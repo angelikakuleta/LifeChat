@@ -14,6 +14,7 @@ export default class MainView extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      handlers: [],
       quests: [
         {
           name: "Tomek",
@@ -27,6 +28,7 @@ export default class MainView extends Component {
           priority: "Wysoki",
           date: "15.10.3016 15:22:15"
         }
+
       ]
     };
 
@@ -34,10 +36,15 @@ export default class MainView extends Component {
   }
 
   refresh = () => {
-    socket.on("chat", (data) => {
-      console.log()
-      this.setState({ quests: [...this.state.quests, data] });
-    });
+    socket.on("chat", ({ handle, message }) => {
+      console.log(handle);
+
+      if (this.state.handlers.includes(handle)) {
+        return;
+      } else {
+        this.setState({ handlers: [...this.state.quests, handle], quests: [...this.state.quests, { name: handle, message: message }] });
+      }
+    })
   }
 
   openChat = () => {

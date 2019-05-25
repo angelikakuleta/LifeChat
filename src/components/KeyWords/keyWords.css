@@ -4,12 +4,19 @@
   overflow-y: hidden;
 }
 
+.keyWords__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .keyWords__form-input {
-  width: 30vw;
+  width: 280px;
+  box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid grey;
-  transition: 0.3s;
-  margin: 10px;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 45px;
 }
 .keyWords__form-input:focus {
   border-bottom: 2px solid rosybrown;
@@ -24,11 +31,11 @@
   text-decoration: none;
   padding: 10px;
 
+  margin-top: 20px;
+
   text-align: center;
 
-  width: 35vw;
-  min-width: 300px;
-  max-width: 450px;
+  width: 280px;
 
   font-size: 18px;
   font-weight: lighter;
@@ -38,7 +45,7 @@
   border-radius: 5px;
 
   transition: 0.7s;
-  /* box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2); */
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
 }
 
 .keyWords__form-button:hover {

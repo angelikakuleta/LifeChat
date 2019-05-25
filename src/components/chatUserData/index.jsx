@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Avatar } from 'antd';
 import './chatUserData.css';
+import avatar1 from '../../assets/avatars/pipo-enemy1.png';
+
 
 class ChatUserData extends React.Component {
     constructor(props) {
@@ -10,11 +12,10 @@ class ChatUserData extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ backgroundColor: "transparent" }}>
                 <Card id="ChatUserDataCard">
-                    <Avatar id="avatar" icon="user" size={64} /><div id="UserText">
+                    <Avatar id="avatar" src={avatar1} size={100} /><div id="UserText">
                         <h1>{this.props.name}</h1>
-                        <h5>{this.props.email}</h5>
                     </div>
                 </Card >
             </div>

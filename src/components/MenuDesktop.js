@@ -13,6 +13,11 @@ class MenuView extends React.Component {
             <span>Koszary</span>
             <Link to="/" />
           </Menu.Item>
+          <Menu.Item key="5">
+            <i class="ra ra-fairy-wand ra-lg"></i>
+            <span>Zaklęcia</span>
+            <Link to="/keywords" />
+          </Menu.Item>
           <Menu.Item key="2">
             <i class="ra ra-ammo-bag ra-lg"></i>
             <span>Sklep</span>
@@ -27,12 +32,7 @@ class MenuView extends React.Component {
             <Icon type="question" />
             <span>Jak grać?</span>
             <Link to="/howTo" />
-          </Menu.Item>
-          <Menu.Item key="5">
-            <i class="ra ra-fairy-wand ra-lg"></i>
-            <span>Zaklęcia</span>
-            <Link to="/keywords" />
-          </Menu.Item>
+          </Menu.Item>    
           <Menu.Item key="6">
             <i class="ra ra-boot-stomp ra-lg"></i>
             <span>Opuść grę</span>

@@ -120,7 +120,7 @@ export default class Register extends React.Component {
     return (
       <section id="register" className="form">
         <div>
-          <h2>Rejestracja</h2>
+          <h1 className="login-title">Rejestracja</h1>
           <form onSubmit={this.handleClick}>
             <div>
               <input

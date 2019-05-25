@@ -7,9 +7,9 @@ import KeyWords from "./KeyWords/keyWords";
 function App() {
   return (
     <div>
+    <Menu />
+    <MainView />
       <KeyWords />
-      {/* <Menu />;
-    <MainView />; */}
     </div>
   );
 }

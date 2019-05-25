@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/form.css";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 export default class Login extends React.Component {
   state = {
@@ -49,6 +48,7 @@ export default class Login extends React.Component {
 
   handleClick = async e => {
     e.preventDefault();
+    localStorage.setItem("email", this.state.email);
 
     const { email, password } = this.state;
     const requestBody = { email, password };

@@ -10,6 +10,9 @@ export default class ChatView extends Component {
     name: "Śmiertelnik_numer_666"
   };
   async componentDidMount() {
+    const name = localStorage.getItem("email");
+    console.log(name);
+    this.setState({ name: name });
     console.log("montuje");
     const token = localStorage.getItem("x-auth-token");
     const requestHeaders = {
@@ -26,8 +29,9 @@ export default class ChatView extends Component {
       console.log("przyszło");
       response = await response.json();
       this.setState({
-        keyWords: response.keyWords
+        keyWords: response
       });
+      this.setState({ keywords: response });
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +42,7 @@ export default class ChatView extends Component {
       <div id="chat-view">
         <ChatUserData
           name={this.state.name}
-          email={this.state.name + "@mycompany.com"}
+          // email={this.state.name + "@mycompany.com"}
         />
         <ChatKeyWords keywords={this.state.keywords} />
         <ChatMain keywords={this.state.keywords} />

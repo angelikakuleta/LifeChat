@@ -9,6 +9,7 @@ section {
   /* background: var(--primary); */
   flex-grow: 1;
   height: 100%;
+  color: white;
 }
 
 .mainView__cardList {
@@ -23,15 +24,15 @@ section {
   width: 90%;
   margin-top: 20px;
   cursor: pointer;
+  color: white !important;
 }
 
 @media (min-width: 1025px) {
   .mainView__cardList {
     align-items: center;
   }
-  
+
   .mainView__cardList-el {
     width: 60%;
   }
 }
-

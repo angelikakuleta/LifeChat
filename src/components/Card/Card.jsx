@@ -3,13 +3,21 @@ import Card from "antd/lib/card";
 import { Avatar } from "antd";
 import "./Card.css";
 import "../../styles/App.css";
+import ChatView from '../ChatView';
 import avatar1 from "../../assets/avatars/pipo-enemy1.png";
 
 export default class CardView extends Component {
-  state = {};
+  state = { renderChat: false };
+  handleClick = () => {
+    this.setState({ renderChat: true })
+  }
+
   render() {
-    return (
-      <Card className="card">
+    let jsx;
+    if (this.state.renderChat) {
+      jsx = <ChatView />
+    } else {
+      jsx = <Card className="card" onClick={this.handleClick}>
         <div className="wrapper">
           <Avatar className="avatar" size={100} src={avatar1} />
           <div className="info">
@@ -22,6 +30,10 @@ export default class CardView extends Component {
           </div>
         </div>
       </Card>
+    }
+
+    return (
+      jsx
     );
   }
 }

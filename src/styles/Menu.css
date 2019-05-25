@@ -4,6 +4,29 @@ section{
 }
 
 .burger {
+    background: var(--fancy);
+    margin: 10px;
+    border: 1px solid var(--secondary);
+}
+
+.burger:hover{ 
     background: var(--secondary);
-    margin: 0.5em;
+    border: 1px solid var(--fancy);
+}
+
+.burger:focus {
+    background: var(--fancy);
+    border: 1px solid var(--secondary);
+}
+
+.ant-menu-root.ant-menu-vertical,
+.ant-menu-root.ant-menu-vertical-left,
+.ant-menu-root.ant-menu-vertical-right,
+.ant-menu-root.ant-menu-inline {
+    background: var(--fancy);
+}
+
+li.ant-menu-item.ant-menu-item-selected a::before {
+    background: var(--secondary);    
+    opacity: 0.5;
 }

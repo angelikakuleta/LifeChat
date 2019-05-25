@@ -17,7 +17,7 @@ const chatWindow = `
                 <div id="output"></div>
                 <div id="feedback"></div>
             </div>
-            <input id="message" type="text" placeholder="Message" />
+            <input id="message" type="text" placeholder="Wpisz wiadomość" />
             <button id="send">Wyślij</button>
         </div>
     </div>`
@@ -74,7 +74,7 @@ const initializeChat = (username) => {
 
     socket.on('typing', function (data) {
         if (data){
-            feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
+            feedback.innerHTML = '<p><em>' + data + ' pisze wiadomość.</em></p>';
         }
         else{
             document.querySelector('p:last-child').innerHTML='';

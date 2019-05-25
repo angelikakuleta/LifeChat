@@ -33,7 +33,6 @@
 .output p{
    color: white;
    word-wrap: break-word;
-   padding-right: 5%;
 }
 .fa-magic {
    font-size: 15px;
@@ -47,6 +46,6 @@
    color: black;
 }
 
-em {
+.kons {
    color: var(--secondarydark)
 }

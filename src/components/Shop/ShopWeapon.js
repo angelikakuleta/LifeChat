@@ -12,7 +12,7 @@ export const ShopWeapon = (props) =>  {
       <div className="btn-wrapper">
       <img src={props.src} alt="armor" style={{"width":"50%", "height":"50%"}} />
       </div>
-            <p className="price">Cena :{props.price}</p>
+            <p className="price">Cena: {props.price}</p>
              <div className="btn-wrapper">
              <Button onClick={props.handleClick}>Buy</Button>
          </div>

@@ -123,8 +123,8 @@ export default class ChatMain extends Component {
                   <div className='feedback'>{this.state.feedback}</div>
                </div>
                <div className="chat-send">
-                  <input type='text' placeholder='Message' onChange={this.handleChangeMessage} value={this.state.message} />
-                  <input type='submit' value='Send' />
+                  <input type='text' placeholder='Napisz...' onChange={this.handleChangeMessage} value={this.state.message} />
+                  <input type='submit' value='Wyślij' />
                </div>
             </form>
          </section>

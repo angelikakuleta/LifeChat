@@ -10,13 +10,15 @@ export default class CardView extends Component {
     return (
       <Card className="card">
       <div className="wrapper">
-        <Avatar className="avatar" size={64} icon="user" />
-        <div className="info">
-          <p>{this.props.name}</p>
-          <p>Data: {this.props.date}</p>
-          {/* <p>Priorytet: {this.props.priority}</p>
-          <p>Wiadomość: {this.props.message}</p> */}
-        </div>
+        <Avatar className="avatar" size={100} icon="user" />
+          <div className="info">
+            <div className="data">
+              <p className="name">{this.props.name}</p>
+              <p>{this.props.date}</p>
+            </div>
+            {/* <p>Priorytet: {this.props.priority}</p> */}
+            <p>{this.props.message}</p>          
+          </div>          
       </div>
       </Card>
     );

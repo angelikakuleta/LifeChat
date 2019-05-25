@@ -8,3 +8,7 @@
     margin-top: 15px;
     margin-bottom: 10px;    
 }
+
+#ChatKeyWords code {
+    background-color: var(--primarydark);
+}

@@ -2,6 +2,7 @@
 
 body {
     background-image: url('mbc.jpg');
+    background-size: cover;
 }
 
 .logout-view {

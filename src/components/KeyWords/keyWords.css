@@ -1,3 +1,7 @@
+.keyWords p {
+  padding-top: 10px;
+
+}
 .keyWords__form {
   display: flex;
   flex-direction: column;
@@ -13,7 +17,7 @@
 
 .ant-spin-container {
   color: white;
-  
+
   padding: 0 10%;
   display: flex;
   flex-wrap: wrap;
@@ -72,6 +76,7 @@
   transition: 0.7s;
   box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
   margin-bottom: 40px;
+  cursor: pointer;
 }
 
 .keyWords__form-button:hover {
@@ -89,7 +94,7 @@
   border: none !important;
 }
 
-.ant-list-header{
+.ant-list-header {
   border: none !important;
   margin-top: 10px;
 }

@@ -4,31 +4,34 @@ import ChatMessage from '../chatMessage/chatMessage';
 
 
 const io = require('socket.io-client');
+const socket = io('http://localhost:3001');
 
 export default class ChatMain extends Component {
-
-   state = {
-      socket: null,
-      handle: 'user',
-      message: '',
-      feedback: '',
-      output: []
+   constructor(props) {
+      super(props);
+      this.props = props;
+      this.state = {
+         socket: null,
+         handle: 'Konsultant',
+         name: this.props.name,
+         toRender: this.props.name,
+         message: '',
+         feedback: '',
+         output: []
+      }
+      setTimeout(this.refresh, 1000)
+      this.chatWindowRef = React.createRef()
    }
 
-   chatWindowRef = React.createRef();
-
-   componentDidMount() {
-      const socket = io('http://localhost:3001');
-      this.setState({ socket })
-      socket.on('connect', () => {
-         console.log('Connected');
-      })
+   refresh = () => {
       socket.on('chat', (data) => {
+         console.log(data)
          this.setState((state) => ({
             feedback: '',
             output: [...state.output, { handle: data.handle, message: data.message }]
          }));
       });
+
       socket.on('typing', (data) => {
          if (data) {
             this.setState({
@@ -40,6 +43,25 @@ export default class ChatMain extends Component {
             })
          }
       });
+   }
+   componentDidMount() {
+      this.setState({ socket })
+      this.setState({ output: [...this.state.output, { handle: this.props.name, message: this.props.message }] })
+      socket.on('connect', () => {
+         console.log('Connected');
+      })
+
+      // socket.on('typing', (data) => {
+      //    if (data) {
+      //       this.setState({
+      //          feedback: (<p><em>{data} is typing a message...</em></p>)
+      //       })
+      //    } else {
+      //       this.setState({
+      //          feedback: ''
+      //       })
+      //    }
+      // });
    }
 
    getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -61,7 +83,8 @@ export default class ChatMain extends Component {
          handle: this.state.handle
       });
       this.setState({
-         message: ''
+         message: '',
+         toRender: this.state.handle
       })
    }
 
@@ -89,12 +112,12 @@ export default class ChatMain extends Component {
    render() {
       return (
 
-         <section id='chat-main'>
+         <section id='chat-main' style={{ backgroundColor: "transparent" }}>
             <form onSubmit={this.handleClick}>
                <div ref={this.chatWindowRef} className='chat-window'>
                   <div className='output'>
                      {this.state.output.map(((el, index) => (
-                        <ChatMessage keywords={this.props.keywords} key={index} message={el.message} user={this.state.handle} />
+                        <ChatMessage keywords={this.props.keywords} key={index} message={el.message} user={el.handle} />
                      )))}
                   </div>
                   <div className='feedback'>{this.state.feedback}</div>

@@ -20,7 +20,7 @@ button {
   border: 0;
 }
 
-.ant-menu-horizontal{
+.ant-menu-horizontal {
   text-align: center;
 }
 
@@ -30,13 +30,47 @@ body {
     "Helvetica Neue", sans-serif;
   font-size: 16px;
   list-style: none;
-  background-image: url('mbc.jpg');
+  background-image: url("mbc.jpg");
   background-size: cover;
+  background-repeat: repeat;
 }
 
 #root {
-  min-width: 100vh;
+  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
+html[data-theme="theme-dark"] {
+  --primary: rgb(215, 223, 220);
+  --primarydark: rgb(81, 83, 82);
+  --secondary: rgb(107, 61, 119);
+  --secondarydark: rgb(82, 46, 92);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-monster"] {
+  --primary: rgb(236, 93, 101);
+  --primarydark: rgb(163, 39, 63);
+  --secondary: rgb(190, 128, 128);
+  --secondarydark: rgb(141, 99, 102);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-light"] {
+  --primary: rgb(185, 248, 224);
+  --primarydark: rgb(211, 230, 220);
+  --secondary: rgb(129, 159, 179);
+  --secondarydark: rgb(177, 206, 214);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-snake"] {
+  --primary: rgb(101, 231, 107);
+  --primarydark: rgb(78, 231, 154);
+  --secondary: rgb(176, 197, 125);
+  --secondarydark: rgb(148, 179, 76);
+  --fancy: rgb(169, 192, 151);
+}
+

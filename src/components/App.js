@@ -1,40 +1,69 @@
 import React from "react";
 import "../styles/App.css";
+import Menu from './Menu';
 import MainView from "./mainView/mainView";
-import Menu from "./Menu";
 import Login from "./Login";
 import Register from "./Register";
+import Logout from "./Logout";
+
 
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom';
 
-const Routes = (
-  <Switch className="App">
-    <Route path="/" exact component={Login} />
-    <Route path="/profile" component={MainView} />
-    {/* <Route path='/shop' component={MainView} />
-    <Route path="/leaderboard" component={Login} />
-    <Route path="/howTo" component={Register} />
-    <Route path="/keywords" component={Logout} />
-    <Route exact path="/settings" component={SplashScreen} />
-    <Route path="/logout" component={InBuild} />
-    <Route path="/login" component={InBuild} />
-    <Route path="/register" component={InBuild} />
-    <Route path="/contact" component={InBuild} />  */}
-    {/* <Route component={Error} /> */}
-  </Switch>
-);
+export default class App extends React.Component {
+  state = {
+    isLogged: false
+  }
 
-import Login from './Login/Login';
-import Register from './Register/Register';
+  componentDidMount() {
+    const token = localStorage.getItem("x-auth-token");
+    if (token) {
+      this.setState({
+        isLogged: true
+      });
+    }
+  }
 
-function App() {
-  return (
-    <Router>{Routes}</Router>
-  )
+  changeLoggedStatus = (logged) => {
+    if(logged) {
+      this.setState({
+        isLogged: true
+      });
+    } else {
+      this.setState({
+        isLogged: false
+      });
+    }
+  }
+
+  render() {
+    return (
+      <Router>
+        <Menu />
+        <Switch className='App'>
+            <Route exact path='/' render={() => (
+            this.state.isLogged ? (<Redirect to='/profile' />) : (<Login changeLoggedStatus={this.changeLoggedStatus} />)
+            )} />
+            <Route path="/profile" component={MainView} />
+            <Route path="/logout" render={() => (
+              <Logout changeLoggedStatus={this.changeLoggedStatus} />
+            )} />
+            {/* <Route path='/shop' component={MainView} />
+            <Route path="/leaderboard" component={Login} />
+            <Route path="/howTo" component={Register} />
+            <Route path="/keywords" component={Logout} />
+            <Route exact path="/settings" component={SplashScreen} />
+            <Route path="/logout" component={InBuild} />
+            <Route path="/login" component={InBuild} />
+            <Route path="/register" component={InBuild} />
+            <Route path="/contact" component={InBuild} />  */}
+            {/* <Route component={Error} /> */}
+          </Switch>
+      </Router>
+    )
+  }
 }
-
-export default App;

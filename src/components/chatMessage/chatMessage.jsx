@@ -6,11 +6,16 @@ class ChatMessage extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.state = { class: "" };
 
     this.toBeRendered = this.props.message;
   }
   componentWillMount() {
     const keywordArr = this.props.keywords;
+    console.log(this.props);
+    if (this.props.user !== "Konsultant") {
+      this.setState({ class: "client" });
+    }
     for (let keyword of keywordArr) {
       this.toBeRendered = reactStringReplace(
         this.toBeRendered,
@@ -57,7 +62,7 @@ class ChatMessage extends React.Component {
     return (
       <Fragment>
         <p>
-          <em className="empha">{this.props.user}: </em>
+          <em className={this.state.class}>{this.props.user}: </em>
           {this.toBeRendered}
         </p>
       </Fragment>

@@ -4,6 +4,17 @@ section{
 }
 
 .burger {
+    background: var(--fancy);
+    margin: 10px;
+    border: 1px solid var(--secondary);
+}
+
+.burger:hover{ 
     background: var(--secondary);
-    margin: 0.5em;
+    border: 1px solid var(--fancy);
+}
+
+.burger:focus {
+    background: var(--fancy);
+    border: 1px solid var(--secondary);
 }

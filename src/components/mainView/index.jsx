@@ -3,6 +3,8 @@ import CardView from "../Card/Card";
 import "./mainView.css";
 import "../../styles/App.css";
 import ChatView from "../ChatView";
+import { Link } from 'react-router-dom';
+
 const io = require("socket.io-client");
 
 const socket = io.connect("http://localhost:3001");
@@ -50,11 +52,13 @@ export default class MainView extends Component {
 
   render() {
     return (
-      <section className="mainView" onClick={this.openChat}>
+      <Link to='/chat'>
+      <section className="mainView">
         <ul className="mainView__cardList">
           {this.state.quests ? this.state.quests.map(this.createNewCard) : null}
         </ul>
       </section>
+      </Link>
     );
   }
 }

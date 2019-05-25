@@ -1,6 +1,11 @@
 @import "./App.css";
 @import "~antd/dist/antd.css";
 
+#login{
+  background-image: url('mbc.jpg');
+  background-size: cover;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -19,6 +24,7 @@
 }
 
 .form h2 {
+  color:white;
   margin-bottom: 20px;
   font-size: 28px;
 }
@@ -42,23 +48,38 @@
   width: 280px;
   box-sizing: border-box;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 0 10px;
-  height: 34px;
+  height: 45px;
 }
 
-.form input[type="submit"] {
-  display: block !important;
-  margin: 10px auto 0;
-  width: auto;
-  padding: 0 20px;
-  background-color: var(--secondarydark);
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+.form input[type="submit"], .toRegisterButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 10px;
+
+    margin-bottom: 18px;
+    height: 45px;
+
+    width: 280px;
+
+    font-size: 18px;
+    font-weight: lighter;
+
+
+    background-color: var(--secondarydark);
+    color: white;
+    border-radius: 5px;
+
+    transition: .7s;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
 }
 
-.toRegisterButton {
+/* .toRegisterButton {
   border: none;
   border-radius: 20px;
   margin-top: 10px;
@@ -68,14 +89,15 @@
   color: white;
   cursor: pointer;
   transition: 0.3s;
-}
+} */
 
 .toRegisterButton:hover {
   background-color: blue;
 }
 
 .form input[type="submit"]:hover {
-  background-color: var(--secondary);
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.4);
+    color:white;
 }
 
 .toLoginButton {
@@ -91,5 +113,6 @@
 }
 
 .toLoginButton:hover {
-  background-color: blue;
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.4);
+  color:white;
 }

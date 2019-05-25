@@ -3,18 +3,18 @@ import Card from "antd/lib/card";
 import { Avatar } from "antd";
 import "./Card.css";
 import "../../styles/App.css";
-import ChatView from '../ChatView';
+import ChatView from "../ChatView";
 import avatar1 from "../../assets/avatars/pipo-enemy1.png";
 import avatar2 from "../../assets/avatars/pipo-enemy2.png";
 import avatar3 from "../../assets/avatars/pipo-enemy3.png";
 import avatar4 from "../../assets/avatars/pipo-enemy4.png";
 import avatar5 from "../../assets/avatars/pipo-enemy5.png";
-import avatar6 from "../../assets/avatars/pipo-enemy5.png";
-import avatar7 from "../../assets/avatars/pipo-enemy5.png";
-import avatar8 from "../../assets/avatars/pipo-enemy5.png";
-import avatar9 from "../../assets/avatars/pipo-enemy5.png";
-import avatar10 from "../../assets/avatars/pipo-enemy5.png";
-import avatar11 from "../../assets/avatars/pipo-enemy5.png";
+import avatar6 from "../../assets/avatars/pipo-enemy6.png";
+import avatar7 from "../../assets/avatars/pipo-enemy7.png";
+import avatar8 from "../../assets/avatars/pipo-enemy8.png";
+import avatar9 from "../../assets/avatars/pipo-enemy9.png";
+import avatar10 from "../../assets/avatars/pipo-enemy10.png";
+import avatar11 from "../../assets/avatars/pipo-enemy11.png";
 
 const avatarArray = [
   avatar1,
@@ -33,8 +33,8 @@ const avatarArray = [
 export default class CardView extends Component {
   state = { renderChat: false };
   handleClick = () => {
-    this.setState({ renderChat: true })
-  }
+    this.setState({ renderChat: true });
+  };
 
   constructor(props) {
     super(props);
@@ -53,29 +53,29 @@ export default class CardView extends Component {
   render() {
     let jsx;
     if (this.state.renderChat) {
-      jsx = <ChatView />
+      jsx = <ChatView />;
     } else {
-      jsx = <Card className="card" onClick={this.handleClick}>
-        <div className="wrapper">
-          <Avatar
-            className="avatar"
-            size={100}
-            src={this.state.numberOfAvatar}
-          />
-          <div className="info">
-            <div className="data">
-              <p className="name">{this.props.name}</p>
-              <p>{this.props.date}</p>
+      jsx = (
+        <Card className="card" onClick={this.handleClick}>
+          <div className="wrapper">
+            <Avatar
+              className="avatar"
+              size={100}
+              src={this.state.numberOfAvatar}
+            />
+            <div className="info">
+              <div className="data">
+                <p className="name">{this.props.name}</p>
+                <p>{this.props.date}</p>
+              </div>
+              {/* <p>Priorytet: {this.props.priority}</p> */}
+              <p>{this.props.message}</p>
             </div>
-            {/* <p>Priorytet: {this.props.priority}</p> */}
-            <p>{this.props.message}</p>
           </div>
-        </div>
-      </Card>
+        </Card>
+      );
     }
 
-    return (
-      jsx
-    );
+    return jsx;
   }
 }

@@ -20,6 +20,10 @@ button {
   border: 0;
 }
 
+.ant-menu-horizontal{
+  text-align: center;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Overpass Mono", "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",

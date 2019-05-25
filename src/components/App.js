@@ -1,12 +1,15 @@
-import React from 'react';
-import '../styles/App.css';
-import ChatMessage from './chatMessage/chatMessage';
-
+import React from "react";
+import "../styles/App.css";
+import MainView from "./mainView/mainView";
+import Menu from "./Menu";
 
 function App() {
   return (
-    <ChatMessage message={'Losowa wiadomość od śmiertelnika'} keywords={['od', 'Losowa', 'nioreg']} />
-  );
+    <div>
+    <Menu />
+    <MainView />
+    </div>
+  )
 }
 
 export default App;

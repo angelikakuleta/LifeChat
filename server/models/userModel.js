@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
    password: { type: String, required: true },
    keywords: { type: Array, default: [] },
    skills: { type: Array, default: [] },
-   gold: { type: Number, default: 0 },
+   gold: { type: Number, default: 1000 },
    exp: { type: Number, default: 0 }
 });
 

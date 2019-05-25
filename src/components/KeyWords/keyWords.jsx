@@ -15,22 +15,24 @@ export default class KeyWords extends Component {
   };
 
   async componentDidMount() {
+    console.log("montuje");
     const token = localStorage.getItem("x-auth-token");
     const requestHeaders = {
       "Content-Type": "application/json; charset=UTF-8",
       "x-auth-token": token
     };
+
     try {
       let response = await fetch(`/addKeyword`, {
         method: "get",
-        headers: requestHeaders,
-        body: "test@gmail.com"
+        headers: requestHeaders
       });
       if (response.status !== 200) throw response;
+      console.log("przyszło");
       response = await response.json();
       this.setState({ keyWords: response.keyWords });
     } catch (error) {
-      return;
+      console.log(error);
     }
   }
   saveSkill = e => {
@@ -42,12 +44,13 @@ export default class KeyWords extends Component {
     const input = document.querySelector(".keyWords__form-input");
     const newSkill = input.value;
     this.setState({ keyWords: [...this.state.keyWords, newSkill] });
-    input.value = "";
     this.sendKeyWords();
+    input.value = "";
   };
 
   async sendKeyWords() {
     if (this.state.keyWords.length === 4) {
+      const input = document.querySelector(".keyWords__form-input");
       console.log("Wysyłaj!");
       const token = localStorage.getItem("x-auth-token");
       const requestHeaders = {
@@ -56,7 +59,7 @@ export default class KeyWords extends Component {
       };
       const requestBody = {
         email: "test@gmail.com",
-        keywords: this.state.keyWords
+        keywords: [...this.state.keyWords, input.value]
       };
 
       try {
@@ -68,7 +71,7 @@ export default class KeyWords extends Component {
         if (response.status !== 200) throw response;
         console.log("poszło");
         response = await response.json();
-        console.log(response.json());
+        console.log(response);
         // const newSkill = this.state.newKeyWord;
         // this.setState({ keyWords: [...this.state.keyWords, newSkill] });
         // input.value = "";

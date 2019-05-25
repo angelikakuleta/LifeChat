@@ -8,7 +8,7 @@ import Register from "./Register";
 import Logout from "./Logout";
 import Shop from "./Shop/Shop";
 import KeyWords from "./KeyWords/keyWords";
-
+import InBuild from "./InBuild";
 
 import {
   BrowserRouter as Router,
@@ -46,25 +46,32 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-        <Menu />
+        {this.state.isLogged && <Menu />}
         <Switch className='App'>
             <Route exact path='/' render={() => (
-            this.state.isLogged ? (<Redirect to='/profile' />) : (<Login changeLoggedStatus={this.changeLoggedStatus} />)
+            this.state.isLogged ? (<Redirect to='/dashboard' />) : (<Login changeLoggedStatus={this.changeLoggedStatus} />)
             )} />
-            <Route path="/register" component={Register} />
-            <Route path="/profile" component={MainView} />
+            <Route path="/login" render={() => (
+            this.state.isLogged ? (<Redirect to='/dashboard' />) : (<Login changeLoggedStatus={this.changeLoggedStatus} />)
+            )} />
+            <Route path="/register" render={() => (
+            this.state.isLogged ? (<Redirect to='/dashboard' />) : (<Register />)
+            )} /> 
             <Route path="/logout" render={() => (
               <Logout changeLoggedStatus={this.changeLoggedStatus} />
             )} />
+            <Route path="/dashboard" component={MainView} />
             <Route path='/shop' component={Shop} />
             <Route path="/keywords" component={KeyWords} />
             <Route path="/chat" component={ChatView} />
-            {/* 
-            <Route path="/leaderboard" component={Login} />
-            <Route path="/howTo" component={Register} />        
-            <Route exact path="/settings" component={SplashScreen} />
+       
+            <Route path="/profile" component={InBuild} />
+            <Route path="/leaderboard" component={InBuild} />
+            <Route path="/howTo" component={InBuild} />        
+            <Route exact path="/settings" component={InBuild} />
             <Route path="/contact" component={InBuild} />
-            <Route component={Error} /> */}
+
+            {/* <Route component={Error} /> */}           
           </Switch>
       </Router>
     )

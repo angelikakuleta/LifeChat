@@ -30,6 +30,7 @@ export default class KeyWords extends Component {
       if (response.status !== 200) throw response;
       console.log("przyszło");
       response = await response.json();
+      console.log(response);
       this.setState({ keyWords: response.keyWords });
     } catch (error) {
       console.log(error);
@@ -37,6 +38,7 @@ export default class KeyWords extends Component {
   }
   saveSkill = e => {
     e.preventDefault();
+    console.log(this);
     if (this.state.keyWords.length === 5) {
       alert("Dodałeś już 5 zaklęc na ten dzień!");
       return;
@@ -106,7 +108,9 @@ export default class KeyWords extends Component {
                 </div>
               }
             >
-              {this.state.keyWords.map(this.renderKeyWords)}
+              {this.state.keyWords
+                ? this.state.keyWords.map(this.renderKeyWords)
+                : null}
             </List>
           </div>
         </div>

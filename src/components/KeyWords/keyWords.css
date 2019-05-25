@@ -1,20 +1,34 @@
-.keyWords {
-  /* margin: 5vh; */
-  height: 95vh;
-  overflow-y: hidden;
-  /* padding: 5vh; */
-}
+.keyWords p {
+  padding-top: 10px;
 
+}
 .keyWords__form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.keyWords-desc {
+  margin-top: 20px;
+  color: white;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.ant-spin-container {
+  color: white;
+
+  padding: 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .keyWords__form-input {
   width: 280px;
   box-sizing: border-box;
-  border: none;
+  border: none !important;
+  margin-top: 20px;
   border-radius: 5px;
   padding: 0 10px;
   height: 45px;
@@ -23,8 +37,22 @@
   border-bottom: 2px solid rosybrown;
 }
 
+.fa-magic {
+  margin: 0 5px;
+}
+
 .kewWords__skills__list-el {
-  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 2px dashed white;
+  min-width: 280px;
+  font-size: 25px;
+  padding: 10px 20px;
+  margin: 10px 10px;
+  background-color: var(--secondarydark);
+  opacity: 0.85;
 }
 
 .keyWords__form-button {
@@ -47,6 +75,8 @@
 
   transition: 0.7s;
   box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
+  margin-bottom: 40px;
+  cursor: pointer;
 }
 
 .keyWords__form-button:hover {
@@ -56,4 +86,15 @@
 
 .keyWords__skills__list-header {
   font-weight: bold;
+  font-size: 20px;
+  color: white;
+  padding: 0 10%;
+
+  text-align: center;
+  border: none !important;
+}
+
+.ant-list-header {
+  border: none !important;
+  margin-top: 10px;
 }

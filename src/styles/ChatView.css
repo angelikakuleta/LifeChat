@@ -42,10 +42,10 @@
    font-size: 23px !important;
 }
 
-.empha {
+em {
    color: black;
 }
 
-.kons {
-   color: var(--secondarydark)
+.client {
+   color: blue !important;
 }

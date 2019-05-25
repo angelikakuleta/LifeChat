@@ -4,19 +4,17 @@ import MainView from "./mainView/mainView";
 import Menu from "./Menu";
 import KeyWords from "./KeyWords/keyWords";
 
-import Login from './Login/Login';
+import Login from "./Login/Login";
 // import Register from './Register/Register';
 
 function App() {
   return (
     <div>
-    <Menu />
-    <MainView />
+      <Menu />
+      <MainView />
       <KeyWords />
-    </div>
-    <>
       <Login />
-    </>
+    </div>
   );
 }
 

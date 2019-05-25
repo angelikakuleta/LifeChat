@@ -21,9 +21,10 @@ export default class KeyWords extends Component {
       "x-auth-token": token
     };
     try {
-      let response = await fetch(`/keywords`, {
+      let response = await fetch(`/addKeyword`, {
         method: "get",
-        headers: requestHeaders
+        headers: requestHeaders,
+        body: "test@gmail.com"
       });
       if (response.status !== 200) throw response;
       response = await response.json();
@@ -41,19 +42,13 @@ export default class KeyWords extends Component {
     const input = document.querySelector(".keyWords__form-input");
     const newSkill = input.value;
     this.setState({ keyWords: [...this.state.keyWords, newSkill] });
-    this.setState({});
     input.value = "";
+    this.sendKeyWords();
   };
 
-  async sendKeyWords(e) {
-    if (this.state.keyWords.length === 5) {
+  async sendKeyWords() {
+    if (this.state.keyWords.length === 4) {
       console.log("Wysyłaj!");
-      e.preventDefault();
-      if (this.state.keyWords.length === 5) {
-        alert("Dodałeś już 5 zaklęc na ten dzień!");
-        return;
-      }
-      const input = document.querySelector(".keyWords__form-input");
       const token = localStorage.getItem("x-auth-token");
       const requestHeaders = {
         "Content-Type": "application/json; charset=UTF-8",
@@ -61,7 +56,7 @@ export default class KeyWords extends Component {
       };
       const requestBody = {
         email: "test@gmail.com",
-        keywords: this.state.newKeyWord
+        keywords: this.state.keyWords
       };
 
       try {
@@ -71,10 +66,12 @@ export default class KeyWords extends Component {
           body: JSON.stringify(requestBody)
         });
         if (response.status !== 200) throw response;
+        console.log("poszło");
         response = await response.json();
-        const newSkill = this.state.newKeyWord;
-        this.setState({ keyWords: [...this.state.keyWords, newSkill] });
-        input.value = "";
+        console.log(response.json());
+        // const newSkill = this.state.newKeyWord;
+        // this.setState({ keyWords: [...this.state.keyWords, newSkill] });
+        // input.value = "";
       } catch (error) {
         return;
       }
@@ -115,7 +112,7 @@ export default class KeyWords extends Component {
             className="keyWords__form-input"
             placeholder="Wpisz zaklęcie"
           />
-          <button className="keyWords__form-button" onClick={this.buttonFunc}>
+          <button className="keyWords__form-button" onClick={this.saveSkill}>
             Dodaj zaklęcie
           </button>
         </form>

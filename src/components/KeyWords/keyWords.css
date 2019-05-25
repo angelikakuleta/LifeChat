@@ -1,5 +1,7 @@
 .keyWords {
-  margin: 5vh;
+  /* margin: 5vh; */
+  height: 95vh;
+  overflow-y: hidden;
 }
 
 .keyWords__form-input {
@@ -18,14 +20,30 @@
 }
 
 .keyWords__form-button {
-  margin: 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 10px;
+
+  text-align: center;
+
+  width: 35vw;
+  min-width: 300px;
+  max-width: 450px;
+
+  font-size: 18px;
+  font-weight: lighter;
+
+  background-color: var(--secondarydark);
+  color: white;
   border-radius: 5px;
-  background-color: rosybrown;
-  padding: 10px 20px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+
+  transition: 0.7s;
+  /* box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2); */
+}
+
+.keyWords__form-button:hover {
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
 .keyWords__skills__list-header {

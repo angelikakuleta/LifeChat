@@ -27,7 +27,6 @@ export default class KeyWords extends Component {
       });
       if (response.status !== 200) throw response;
       response = await response.json();
-
       this.setState({ keyWords: response.keyWords });
     } catch (error) {
       return;
@@ -81,27 +80,36 @@ export default class KeyWords extends Component {
   renderKeyWords(el) {
     return (
       <li className="kewWords__skills__list-el" key={Math.random()}>
-        {el}
+        <i class="fas fa-magic" /> {el}
       </li>
     );
   }
   render() {
     return (
       <section className="keyWords">
+        <div className="keyWords-desc" />
         <div className="keyWords__skills">
           <div className="keyWords__skills__list">
-            <List header={<div>Twoje zaklęcia na ten deszczowy dzień to:</div>}>
+            <List
+              header={
+                <div className="keyWords__skills__list-header">
+                  Twoje zaklęcia na ten deszczowy dzień to:
+                </div>
+              }
+            >
               {this.state.keyWords.map(this.renderKeyWords)}
             </List>
           </div>
         </div>
-        <Form className="keyWords__form" action="">
+        <form className="keyWords__form" action="">
           <input
             className="keyWords__form-input"
             placeholder="Wpisz zaklęcie"
           />
-          <button onClick={this.saveSkill}>Dodaj zaklęcie</button>
-        </Form>
+          <button className="keyWords__form-button" onClick={this.saveSkill}>
+            Dodaj zaklęcie
+          </button>
+        </form>
       </section>
     );
   }

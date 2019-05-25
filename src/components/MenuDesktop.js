@@ -34,7 +34,7 @@ class MenuView extends React.Component {
             <Link to="/keywords" />
           </Menu.Item>
           <Menu.Item key="6">
-            <Icon type="logout" />
+            <i class="ra ra-boot-stomp ra-lg"></i>
             <span>Opuść grę</span>
             <Link to="/logout" />
           </Menu.Item>

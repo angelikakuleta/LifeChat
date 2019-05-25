@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-// import Form from "antd/lib/form";
-// import Input from "antd/lib/input";
-// import Button from "antd/lib/button";
 import List from "antd/lib/list";
-// import Typography from "antd/lib/typography";
 import "./keyWords.css";
 import "../../styles/App.css";
 
@@ -91,7 +87,7 @@ export default class KeyWords extends Component {
   renderKeyWords(el) {
     return (
       <li className="kewWords__skills__list-el" key={Math.random()}>
-        <i class="fas fa-magic" /> {el}
+        <i className="fas fa-magic" /> {el}
       </li>
     );
   }
@@ -101,7 +97,9 @@ export default class KeyWords extends Component {
         <div className="keyWords-desc">
           Czas przygotować się na dzisiejszą przygodę. Możesz wziąc ze sobą aż 5
           zwojów z zaklęciami. Wybieraj jednak mądrze, ponieważ wybranych zwojów
-          nie można już zmienić!{" "}
+          nie można już zmienić! Pamiętaj o dwóch najważniejszych rzeczach:
+          <p>1. Na zwoju zmieści się maksymalnie 10 run! </p>
+          <p>2. Wybierz dokładnie 5 zwojów, nie więcej, nie mniej! </p>
         </div>
         <div className="keyWords__skills">
           <div className="keyWords__skills__list">
@@ -118,15 +116,17 @@ export default class KeyWords extends Component {
             </List>
           </div>
         </div>
+        {this.state.keyWords.length < 5 &&
         <form className="keyWords__form" action="">
           <input
             className="keyWords__form-input"
             placeholder="Wpisz zaklęcie"
+            maxlength="10"
           />
           <button className="keyWords__form-button" onClick={this.saveSkill}>
             Dodaj zaklęcie
           </button>
-        </form>
+        </form>}
       </section>
     );
   }

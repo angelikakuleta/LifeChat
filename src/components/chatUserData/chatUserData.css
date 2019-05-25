@@ -2,10 +2,17 @@
 #ChatUserDataCard{
     display: flex;
     width: 100%;
+    padding: 15px;
     /* border: solid 2px black;s */
     /* box-sizing: border-box; */
-
+    background-color: transparent;
+    border: none;
 }
+
+#ChatUserDataCard h1 {
+    color: white;
+}
+
 #avatar {
     height: 100%;
 

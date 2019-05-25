@@ -20,19 +20,23 @@ button {
   border: 0;
 }
 
+.ant-menu-horizontal {
+  text-align: center;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Overpass Mono", "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   font-size: 16px;
   list-style: none;
-  background-image: url('mbc.jpg');
+  background-image: url("mbc.jpg");
   background-size: cover;
-  overflow-y: hidden;
+  background-repeat: repeat;
 }
 
 #root {
-  min-width: 100vh;
+  min-width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

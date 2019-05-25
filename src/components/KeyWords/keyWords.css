@@ -1,13 +1,23 @@
 .keyWords {
-  margin: 5vh;
+  /* margin: 5vh; */
+  height: 95vh;
+  overflow-y: hidden;
+  /* padding: 5vh; */
+}
+
+.keyWords__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .keyWords__form-input {
-  width: 30vw;
+  width: 280px;
+  box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid grey;
-  transition: 0.3s;
-  margin: 10px;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 45px;
 }
 .keyWords__form-input:focus {
   border-bottom: 2px solid rosybrown;
@@ -18,13 +28,30 @@
 }
 
 .keyWords__form-button {
-  margin: 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 10px;
+
+  margin-top: 20px;
+
+  text-align: center;
+
+  width: 280px;
+
+  font-size: 18px;
+  font-weight: lighter;
+
+  background-color: var(--secondarydark);
+  color: white;
   border-radius: 5px;
-  background-color: rosybrown;
-  padding: 10px 20px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
+
+  transition: 0.7s;
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
+}
+
+.keyWords__form-button:hover {
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
 .keyWords__skills__list-header {

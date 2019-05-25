@@ -1,12 +1,41 @@
 @import "~antd/dist/antd.css";
-@import url('https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap");
 
 :root {
-  --primary: #62CCA4;
-  --primarydark: #5FB393;
-  --secondary: #E894FF;
-  --secondarydark: #A761BA;
-  --fancy: #FFE7AD;
+  --primary: #62cca4;
+  --primarydark: #5fb393;
+  --secondary: #e894ff;
+  --secondarydark: #a761ba;
+  --fancy: #ffe7ad;
+}
+
+body,
+p,
+form,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Overpass Mono", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  list-style: none;
+  background-image: url('mbc.jpg');
+  background-size: cover;
+  overflow-y: hidden;
+}
+
+#root {
+  min-width: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 html[data-theme="theme-dark"] {
@@ -47,26 +76,4 @@ html[data-theme="theme-ghost"] {
   --secondary: rgb(107, 139, 143);
   --secondarydark: rgb(52, 62, 66);
   --fancy: rgb(209, 207, 202);
-}
-
-body, p, form, input, button {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: 0;
-}
-
-body { 
-  font-family: -apple-system, BlinkMacSystemFont, "Overpass Mono", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  list-style: none;
-  background-image: url('mbc.jpg');
-  background-size: cover;
-}
-
-#root {
-  min-width: 100vh;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }

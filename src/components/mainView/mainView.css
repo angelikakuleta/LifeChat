@@ -19,3 +19,14 @@
   margin-top: 20px;
   cursor: pointer;
 }
+
+@media (min-width: 1025px) {
+  .mainView__cardList {
+    align-items: center;
+  }
+  
+  .mainView__cardList-el {
+    width: 60%;
+  }
+}
+

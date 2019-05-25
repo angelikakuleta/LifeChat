@@ -17,11 +17,11 @@ class MenuViewMobile extends React.Component {
     render() {
     return (
         <Router>
-        <div style={{ width: '100vw' }}>
-            <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
+        <div style={{ width: '100%' }}>
+            <Button className="burger" type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
             <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
             </Button>
-           {this.state.collapsed ? null :  <Menu 
+           {this.state.collapsed ? null :  <Menu className="menu"
             style={{ height: '100vh' }}
             defaultSelectedKeys={['1']} 
             defaultOpenKeys={this.state.collapsed}
@@ -65,7 +65,7 @@ class MenuViewMobile extends React.Component {
             <Menu.Item key="7">
             <Icon type="logout" />
             <span>Log out</span>
-            <Link to="/logout" />
+            <Link to="/logout" />          
             </Menu.Item>
         </Menu>
            }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {ShopItem} from './ShopItem';
+import Avatar from './Avatars';
 import "./Shop.css";
 
 class Shop extends React.Component {
@@ -18,7 +19,7 @@ class Shop extends React.Component {
 
     handleButtonClick = (e, index) => {
         if (this.state.items[index].price > this.state.user.money) {
-            alert('You have not enough money')
+            alert('You have not enough gold')
         } else {
             this.setState(prevState => ({
                 user: {
@@ -34,11 +35,14 @@ class Shop extends React.Component {
 
     render() {
         return (
-            <div className='shop'>
-            {this.state.items.map((el,index) => 
-            <ShopItem name={el.name} price={el.price} handleClick={(e) => this.handleButtonClick(e, index)} />)
-            }
-            </div>          
+            <div>
+                <div className='shop'>
+                {this.state.items.map((el,index) => 
+                <ShopItem name={el.name} key={index} price={el.price} handleClick={(e) => this.handleButtonClick(e, index)} />)
+                }
+                <Avatar />
+                </div> 
+            </div>
         );
     }
 }

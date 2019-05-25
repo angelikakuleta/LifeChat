@@ -8,7 +8,6 @@ router.get('/', auth, async (req, res) => {
     let user;
     user = await User.findById(req.user);
     res.json(user.gold);
-
 })
 
 router.post('/', async (req, res) => {

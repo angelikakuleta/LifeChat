@@ -9,6 +9,46 @@
   --fancy: #FFE7AD;
 }
 
+html[data-theme="theme-dark"] {
+  --primary: rgb(35, 80, 63);
+  --primarydark: rgb(18, 22, 20);
+  --secondary: rgb(107, 61, 119);
+  --secondarydark: rgb(82, 46, 92);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-monster"] {
+  --primary: rgb(13, 31, 24);
+  --primarydark: rgb(18, 22, 20);
+  --secondary: rgb(139, 58, 58);
+  --secondarydark: rgb(99, 21, 27);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-light"] {
+  --primary: rgb(185, 248, 224);
+  --primarydark: rgb(211, 230, 220);
+  --secondary: rgb(129, 159, 179);
+  --secondarydark: rgb(177, 206, 214);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-snake"] {
+  --primary: rgb(101, 231, 107);
+  --primarydark: rgb(78, 231, 154);
+  --secondary: rgb(176, 197, 125);
+  --secondarydark: rgb(148, 179, 76);
+  --fancy: rgb(209, 207, 202);
+}
+
+html[data-theme="theme-ghost"] {
+  --primary: rgb(91, 117, 107);
+  --primarydark: rgb(110, 133, 121);
+  --secondary: rgb(107, 139, 143);
+  --secondarydark: rgb(52, 62, 66);
+  --fancy: rgb(209, 207, 202);
+}
+
 body, p, form, input, button {
   margin: 0;
   padding: 0;

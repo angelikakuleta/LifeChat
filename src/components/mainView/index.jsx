@@ -10,7 +10,6 @@ const io = require("socket.io-client");
 const socket = io.connect("http://localhost:3001");
 
 export default class MainView extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,33 +17,30 @@ export default class MainView extends Component {
       quests: [
         {
           name: "Tomasz",
-          message: "Dzień dobry",
-          priority: "Wysoki",
-          date: "15.10.3016 15:22:15"
+          message: "Dzień dobry"
         },
         {
           name: "Bozena",
-          message: "Jak powinnam zrobić to?",
-          priority: "Wysoki",
-          date: "15.10.3016 16:32:16"
+          message: "Jak powinnam zrobić to?"
         }
-
       ]
     };
 
-    setTimeout(this.refresh, 1000)
+    setTimeout(this.refresh, 1000);
   }
 
   refresh = () => {
     socket.on("chat", ({ handle, message }) => {
-
       if (this.state.handlers.includes(handle)) {
         return;
       } else {
-        this.setState({ handlers: [...this.state.quests, handle], quests: [...this.state.quests, { name: handle, message: message }] });
+        this.setState({
+          handlers: [...this.state.quests, handle],
+          quests: [...this.state.quests, { name: handle, message: message }]
+        });
       }
-    })
-  }
+    });
+  };
 
   openChat = () => {
     console.log("otwieram chat");
@@ -55,11 +51,12 @@ export default class MainView extends Component {
     console.log(el);
     return (
       <li className="mainView__cardList-el" key={Math.random()}>
-        <Link to={{
-          pathname: "/chat",
-          name: el.name,
-          message: el.message
-        }}
+        <Link
+          to={{
+            pathname: "/chat",
+            name: el.name,
+            message: el.message
+          }}
         >
           <CardView
             name={el.name}

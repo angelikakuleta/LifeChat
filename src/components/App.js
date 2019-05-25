@@ -44,8 +44,10 @@ export default class App extends React.Component {
   }
 
   render() {
+    const theme = localStorage.getItem("theme");
+    if (theme) document.documentElement.setAttribute("data-theme", theme);
     return (
-      <Router>
+      <Router> 
         {this.state.isLogged && <Menu />}
         <Switch className='App'>
             <Route exact path='/' render={() => (

@@ -3,6 +3,8 @@ import {
    Link
 } from "react-router-dom";
 
+import '../styles/Logout.css'
+
 export default class Logout extends React.Component {
 
    componentDidMount() {
@@ -12,10 +14,10 @@ export default class Logout extends React.Component {
 
    render() {
       return (
-         <div>
-            <h1>Pomyślnie wylogowano</h1>
-            <Link to="/" >
-               Wróć do strony głownej
+         <div className="logout-view">
+            <h1 className="logout-info">Pomyślnie wylogowano</h1>
+            <Link to="/" className="back-to-main">
+               Wróć do strony głównej
             </Link> 
          </div>
       );

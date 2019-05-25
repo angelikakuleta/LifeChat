@@ -1,0 +1,47 @@
+@import './App.css';
+
+body {
+    background-image: url('mbc.jpg');
+}
+
+.logout-view {
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-info {
+    color: white;
+    text-align: center;
+}
+
+.back-to-main {
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 10px;
+
+    text-align: center;
+
+    width: 30vw;
+    min-width: 250px;
+    max-width: 400px;
+
+    font-size: 18px;
+    font-weight: lighter;
+
+
+    background-color: var(--secondarydark);
+    color: white;
+    border-radius: 5px;
+
+    transition: .7s;
+}
+
+.back-to-main:hover {
+    box-shadow: 0px 0px 10px 10px rgba(255,255,255,0.3);
+    color:white;
+}

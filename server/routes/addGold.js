@@ -9,7 +9,6 @@ router.get('/', auth, async (req, res) => {
     user = await User.findById(req.user);
     if (!user) return res.status(400).send('Invalid email or password.')
     res.json(user.gold);
-
 })
 
 router.post('/', auth, async (req, res) => {

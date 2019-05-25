@@ -1,5 +1,7 @@
 import React from "react";
 import "../../styles/form.css";
+import { Link } from 'react-router-dom';
+
 
 export default class Login extends React.Component {
   state = {
@@ -118,9 +120,11 @@ export default class Login extends React.Component {
               value="Zaloguj się"
               disabled={this.state.isDisable}
             />
-            <button className="toRegisterButton" type="button">
-              Nie posiadam konta
-            </button>
+            <Link to="/register">
+              <button className="toRegisterButton" type="button">
+                Nie posiadam konta
+              </button>
+            </Link>
           </form>
         </div>
       </section>

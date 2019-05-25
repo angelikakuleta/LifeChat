@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/form.css";
+import { Link } from 'react-router-dom';
 
 export default class Register extends React.Component {
   state = {
@@ -160,9 +161,11 @@ export default class Register extends React.Component {
               value="Zarejestruj się"
               disabled={this.state.isDisable}
             />
-            <button className="toLoginButton" type="button">
-              A jednak mam XD
-            </button>
+            <Link to="/login">
+              <button className="toLoginButton" type="button">
+                A jednak mam XD
+              </button>
+            </Link>
           </form>
         </div>
       </section>

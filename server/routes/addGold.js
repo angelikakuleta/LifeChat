@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
     let user;
     user = await User.findOne({ email: req.body.email.toLowerCase() });
     res.json(user.gold);
-
 })
 
 router.post('/', async (req, res) => {

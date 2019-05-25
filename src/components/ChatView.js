@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChatMain from './ChatMain';
+import ChatMain from './chatMain';
 import ChatUserData from './chatUserData';
 import ChatKeyWords from './chatKeyWords';
 import '../styles/ChatView.css';

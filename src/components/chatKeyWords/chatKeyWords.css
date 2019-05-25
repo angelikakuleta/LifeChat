@@ -3,6 +3,7 @@
 #ChatKeyWords {
     display: flex;
     justify-content: center;
+    align-self: center;
     font-size: 2.5rem;
-
+    padding-bottom: 6px;
 }

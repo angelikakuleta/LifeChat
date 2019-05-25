@@ -90,7 +90,7 @@ export default class Login extends React.Component {
     return (
       <section id="login" className="form">
         <div>
-          <h2>Panel logowania</h2>
+          <h1 className="login-title">Panel logowania</h1>
           <form onSubmit={this.handleClick}>
             <div>
               <input

@@ -33,7 +33,7 @@ export default class CardView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfAvatar: "avatar1"
+      numberOfAvatar: ""
     };
   }
 

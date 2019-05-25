@@ -73,6 +73,11 @@ const initializeChat = (username) => {
     });
 
     socket.on('typing', function (data) {
-        feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
-    });
+        if (data){
+            feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
+        }
+        else{
+            document.querySelector('p:last-child').innerHTML='';
+        }
+        });
 }

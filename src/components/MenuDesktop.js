@@ -1,13 +1,12 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
 import "antd/dist/antd.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class MenuView extends React.Component {
     render() {
     return (
-        <Router>
-        <div style={{ width: '100vw' }}>
+        <div style={{ width: '100%' }}>
             <Menu 
             defaultSelectedKeys={['1']} 
             mode="horizontal">
@@ -52,8 +51,7 @@ class MenuView extends React.Component {
             <Link to="/logout" />
             </Menu.Item>
         </Menu>
-        </div>
-        </Router>     
+        </div>   
     )
     }
 }

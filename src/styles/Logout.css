@@ -1,9 +1,6 @@
 @import './App.css';
 
-body {
-    background-image: url('mbc.jpg');
-    background-size: cover;
-}
+
 
 .logout-view {
     height: 100vh;

@@ -5,6 +5,8 @@ import MainView from "./mainView/mainView";
 import Login from "./Login";
 import Register from "./Register";
 import Logout from "./Logout";
+import Shop from "./Shop/Shop";
+import KeyWords from "./KeyWords/keyWords";
 
 
 import {

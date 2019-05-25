@@ -1,9 +1,19 @@
 @import "~antd/dist/antd.css";
+
 .card {
     background: var(--primarydark);
     border: transparent;
-    border-radius: 10em 0 0 10em;
+    border-radius: 10em 1em 1em 10em;
     padding: 0;
+    position: relative;
+    animation-name: appear;
+    animation-duration: 1s;
+}
+
+@keyframes appear {
+    0% {left: 1000px;}
+    80% {left: -100px;}
+    100% {left: 0px;}
 }
 
 .wrapper {
@@ -34,4 +44,11 @@
 
 .avatar {
     /* background: var(--primarydark); */
+}
+
+@media  (min-width: 1025px) {
+    .card {
+        border-radius: 10em;
+    }
+
 }

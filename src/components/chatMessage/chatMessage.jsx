@@ -57,7 +57,7 @@ class ChatMessage extends React.Component {
     return (
       <Fragment>
         <p>
-          <em>{this.props.user}: </em>
+          <em className="empha">{this.props.user}: </em>
           {this.toBeRendered}
         </p>
       </Fragment>

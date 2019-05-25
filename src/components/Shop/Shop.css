@@ -7,6 +7,18 @@
     margin: 20px;
 }
 
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: var(--primarydark);
+    overflow: hidden;
+  }
+
+  .ant-carousel .slick-slide h3 {
+    color: rgb(255, 255, 255);
+  }
+
 @media only screen and (min-width: 768px) {
     .shop {
         display: grid;

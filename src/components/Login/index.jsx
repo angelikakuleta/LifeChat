@@ -67,8 +67,6 @@ export default class Login extends React.Component {
         response.headers.get("x-auth-token")
       );
       response = await response.json();
-      this.props.changeLoggedStatus(true);
-      console.log(response);
     } catch (err) {
       console.log(err);
       if ([404, 400].includes(err.status)) {

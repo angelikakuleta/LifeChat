@@ -8,7 +8,7 @@
   justify-content: center;
   height: 100%;
   background-color: var(--primarydark);
-  min-height: 100vh;
+  flex-grow: 1;
 }
 
 .form > div {

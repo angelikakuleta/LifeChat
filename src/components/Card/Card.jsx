@@ -57,7 +57,7 @@ export default class CardView extends Component {
     } else {
       jsx = (
         <Card className="card" onClick={this.handleClick}>
-          <div className="wrapper">
+          <div className="wrapper" style={{ color: "white" }}>
             <Avatar
               className="avatar"
               size={100}

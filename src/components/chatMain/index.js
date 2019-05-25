@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import '../styles/ChatMain.css';
-import ChatMessage from './chatMessage/chatMessage';
+import React, { Component } from 'react';
+import './ChatMain.css';
+import ChatMessage from '../chatMessage/chatMessage';
 
 
 const io = require('socket.io-client');

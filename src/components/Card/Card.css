@@ -25,17 +25,21 @@
   margin: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 70%;
 }
 
 .data {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
 }
 
 .info .name {
   font-weight: bold;
   margin-right: 1fr;
+  font-size: 1.2em;
 }
 
 .ant-card-body {
@@ -43,6 +47,7 @@
 }
 
 .avatar {
-  border: 5px solid rosybrown;
-  background-color: #fff;
+  /* border: 5px solid rosybrown; */
+  background: rgba(0,0,0,0.1);
+  border: 3px solid var(--fancy);
 }

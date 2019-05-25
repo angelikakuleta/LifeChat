@@ -40,25 +40,25 @@ export default class MainView extends Component {
   createNewCard = el => {
     return (
       <li className="mainView__cardList-el" key={Math.random()}>
+        <Link to='/chat'>
         <CardView
           name={el.name}
           date={el.date}
           priority={el.priority}
           message={el.message}
-        />
+        /></Link>
       </li>
     );
   };
 
   render() {
     return (
-      <Link to='/chat'>
+      
       <section className="mainView">
         <ul className="mainView__cardList">
           {this.state.quests ? this.state.quests.map(this.createNewCard) : null}
         </ul>
       </section>
-      </Link>
     );
   }
 }

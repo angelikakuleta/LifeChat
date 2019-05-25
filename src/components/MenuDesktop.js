@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 class MenuView extends React.Component {
   render() {
     return (
-      <div style={{ width: "100%" }}>
+      <div className='menu-rpg' style={{ width: "100%" }}>
         <Menu defaultSelectedKeys={["1"]} mode="horizontal">
           <Menu.Item key="1">
-            <Icon type="message" />
+            <i class="ra ra-crossed-swords ra-lg"></i>
             <span>Koszary</span>
             <Link to="/" />
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="shopping" />
+            <i class="ra ra-ammo-bag ra-lg"></i>
             <span>Sklep</span>
             <Link to="/shop" />
           </Menu.Item>
           <Menu.Item key="3">
-            <Icon type="rise" />
+            <i class="ra ra-castle-flag ra-lg"></i>
             <span>Hala Sław</span>
             <Link to="/leaderboard" />
           </Menu.Item>
@@ -29,7 +29,7 @@ class MenuView extends React.Component {
             <Link to="/howTo" />
           </Menu.Item>
           <Menu.Item key="5">
-            <Icon type="file-word" />
+            <i class="ra ra-fairy-wand ra-lg"></i>
             <span>Zaklęcia</span>
             <Link to="/keywords" />
           </Menu.Item>

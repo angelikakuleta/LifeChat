@@ -1,3 +1,5 @@
+@import '../../node_modules/rpg-awesome/css/rpg-awesome.min.css';
+
 section{
     background: var(--primarydark);
     border: transparent;
@@ -29,4 +31,21 @@ section{
 li.ant-menu-item.ant-menu-item-selected a::before {
     background: var(--secondary);    
     opacity: 0.5;
+}
+
+li.ant-menu-item-selected {
+    color: rgba(0, 0, 0, 0.65) !important;
+    border-bottom: 2px solid var(--secondarydark) !important;
+}
+
+li.ant-menu-item:hover {
+    border-bottom: 2px solid var(--secondarydark) !important;
+}
+
+li.ant-menu-item:hover {
+    color: var(--secondarydark) !important;
+}
+
+.menu-rpg .ra {
+    margin-right: 8px;
 }

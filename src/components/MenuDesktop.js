@@ -13,6 +13,11 @@ class MenuView extends React.Component {
             <span>Koszary</span>
             <Link to="/" />
           </Menu.Item>
+          <Menu.Item key="5">
+            <Icon type="file-word" />
+            <span>Zaklęcia</span>
+            <Link to="/keywords" />
+          </Menu.Item>
           <Menu.Item key="2">
             <i class="ra ra-ammo-bag ra-lg"></i>
             <span>Sklep</span>

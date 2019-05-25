@@ -91,7 +91,7 @@ export default class KeyWords extends Component {
   renderKeyWords(el) {
     return (
       <li className="kewWords__skills__list-el" key={Math.random()}>
-        <i class="fas fa-magic" /> {el}
+        <i className="fas fa-magic" /> {el}
       </li>
     );
   }
@@ -122,6 +122,7 @@ export default class KeyWords extends Component {
           <input
             className="keyWords__form-input"
             placeholder="Wpisz zaklęcie"
+            maxlength="10"
           />
           <button className="keyWords__form-button" onClick={this.saveSkill}>
             Dodaj zaklęcie

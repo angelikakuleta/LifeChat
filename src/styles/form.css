@@ -1,7 +1,7 @@
 @import "./App.css";
 @import "~antd/dist/antd.css";
 
-#login{
+#login, #register{
   background-image: url('mbc.jpg');
   background-size: cover;
 }
@@ -53,7 +53,7 @@
   height: 45px;
 }
 
-.form input[type="submit"], .toRegisterButton {
+.form input[type="submit"], .toRegisterButton, .toLoginButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,39 +77,33 @@
 
     transition: .7s;
     box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
 }
 
-/* .toRegisterButton {
-  border: none;
+.toRegisterButton {
+  /* border: none;
   border-radius: 20px;
   margin-top: 10px;
   width: auto;
-  padding: 5px 20px;
+  padding: 5px 20px; */
   background-color: royalblue;
-  color: white;
+  /* color: white;
   cursor: pointer;
-  transition: 0.3s;
-} */
-
-.toRegisterButton:hover {
-  background-color: blue;
+  transition: 0.3s; */
 }
 
-.form input[type="submit"]:hover {
+
+
+.form input[type="submit"]:hover, .toRegisterButton:hover {
     box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.4);
     color:white;
 }
 
 .toLoginButton {
-  border: none;
-  border-radius: 20px;
-  margin-top: 10px;
-  width: auto;
-  padding: 5px 20px;
+
   background-color: royalblue;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
+
 }
 
 .toLoginButton:hover {

@@ -14,7 +14,7 @@ class MenuView extends React.Component {
             <Link to="/" />
           </Menu.Item>
           <Menu.Item key="5">
-            <Icon type="file-word" />
+            <i class="ra ra-fairy-wand ra-lg"></i>
             <span>Zaklęcia</span>
             <Link to="/keywords" />
           </Menu.Item>
@@ -32,14 +32,9 @@ class MenuView extends React.Component {
             <Icon type="question" />
             <span>Jak grać?</span>
             <Link to="/howTo" />
-          </Menu.Item>
-          <Menu.Item key="5">
-            <i class="ra ra-fairy-wand ra-lg"></i>
-            <span>Zaklęcia</span>
-            <Link to="/keywords" />
-          </Menu.Item>
+          </Menu.Item>    
           <Menu.Item key="6">
-            <Icon type="logout" />
+            <i class="ra ra-boot-stomp ra-lg"></i>
             <span>Opuść grę</span>
             <Link to="/logout" />
           </Menu.Item>

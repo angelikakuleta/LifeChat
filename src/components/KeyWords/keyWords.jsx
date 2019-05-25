@@ -118,6 +118,7 @@ export default class KeyWords extends Component {
             </List>
           </div>
         </div>
+        {this.state.keyWords.length < 5 &&
         <form className="keyWords__form" action="">
           <input
             className="keyWords__form-input"
@@ -127,7 +128,7 @@ export default class KeyWords extends Component {
           <button className="keyWords__form-button" onClick={this.saveSkill}>
             Dodaj zaklęcie
           </button>
-        </form>
+        </form>}
       </section>
     );
   }

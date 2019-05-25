@@ -1,0 +1,16 @@
+@import '~antd/dist/antd.css';
+#ChatUserDataCard{
+    display: flex;
+    width: 100%;
+    /* border: solid 2px black;s */
+    /* box-sizing: border-box; */
+
+}
+#avatar {
+    height: 100%;
+
+}
+#UserText{ 
+    display: inline-block;
+    margin-left: 2rem;
+}

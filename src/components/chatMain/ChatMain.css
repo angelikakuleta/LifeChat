@@ -17,17 +17,24 @@
    flex-direction: column;
    flex-grow: 1;
    overflow: auto;
-
+   padding: 0 15px;
+   position: relative; 
+   padding-top: 10px;
+   border-top: 8px solid var(--primarydark);
+   border-bottom: 8px solid var(--primarydark);
+   
 }
 
 #chat-main .output {
    flex-grow: 1;
-
+   height: 100%;
+   position: absolute;
+   top: 0;
 }
 
 #chat-main .chat-send {
    display: flex;
-   height: 38px;
+   height: 44px;
    flex-shrink: 0;
    border: 1px solid #e8e8e8;
    position: relative;
@@ -44,13 +51,16 @@
    font-size: 16px;
    padding: 0 15px;
    border: none;
-   background-color: gray;
-   border-radius: 3px 0 0 3px;
+   background-color: rgb(204,204,204);
    color: white;
    font-size: 20px;
    position: absolute;
    top: -1px;
    right: -1px;
-   height: 38px;
+   height: 44px;
    cursor: pointer;
+}
+
+#chat-main input[type='submit']:hover {
+   background-color: var(--fancy);
 }

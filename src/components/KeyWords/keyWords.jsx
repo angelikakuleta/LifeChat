@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Form from "antd/lib/form";
-import Input from "antd/lib/input";
-import Button from "antd/lib/button";
+// import Form from "antd/lib/form";
+// import Input from "antd/lib/input";
+// import Button from "antd/lib/button";
 import List from "antd/lib/list";
-import Typography from "antd/lib/typography";
+// import Typography from "antd/lib/typography";
 import "./keyWords.css";
 import "../../styles/App.css";
 
@@ -43,6 +43,7 @@ export default class KeyWords extends Component {
       return;
     }
     const input = document.querySelector(".keyWords__form-input");
+    if (!input.value) return;
     const newSkill = input.value;
     this.setState({ keyWords: [...this.state.keyWords, newSkill] });
     this.sendKeyWords();
@@ -97,7 +98,11 @@ export default class KeyWords extends Component {
   render() {
     return (
       <section className="keyWords">
-        <div className="keyWords-desc" />
+        <div className="keyWords-desc">
+          Czas przygotować się na dzisiejszą przygodę. Możesz wziąc ze sobą aż 5
+          zwojów z zaklęciami. Wybieraj jednak mądrze, ponieważ wybranych zwojów
+          nie można już zmienić!{" "}
+        </div>
         <div className="keyWords__skills">
           <div className="keyWords__skills__list">
             <List

@@ -6,7 +6,7 @@ import Menu from "./Menu";
 import KeyWords from "./KeyWords/keyWords";
 
 import Login from "./Login/Login";
-// import Register from './Register/Register';
+import Register from "./Register/Register";
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
       <MainView />
       <KeyWords />
       <Login />
-    <Shop />
+      <Shop />
+      <Register />
     </div>
   );
 }

@@ -1,37 +1,38 @@
 @import "~antd/dist/antd.css";
 .card {
-    background: var(--primarydark);
-    border: transparent;
-    border-radius: 10em 0 0 10em;
-    padding: 0;
+  background: var(--primarydark);
+  border: transparent;
+  border-radius: 10em 0 0 10em;
+  padding: 0;
 }
 
 .wrapper {
-    display: flex;
-    padding: 0;
+  display: flex;
+  padding: 0;
 }
 
 .info {
-    margin: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .data {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .info .name {
-    font-weight: bold;
-    margin-right: 1fr;
+  font-weight: bold;
+  margin-right: 1fr;
 }
 
 .ant-card-body {
-    padding: 0;
+  padding: 0;
 }
 
 .avatar {
-    /* background: var(--primarydark); */
+  border: 5px solid rosybrown;
+  background-color: #fff;
 }

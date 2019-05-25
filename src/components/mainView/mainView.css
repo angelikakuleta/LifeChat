@@ -1,8 +1,12 @@
 @import "~antd/dist/antd.css";
 
+section {
+  background: transparent;
+}
+
 .mainView {
   padding: 0;
-  background: var(--primary);
+  /* background: var(--primary); */
   flex-grow: 1;
   height: 100%;
 }

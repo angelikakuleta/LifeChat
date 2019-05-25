@@ -1,6 +1,6 @@
 import React from 'react';
 import {ShopItem} from './ShopItem';
-import Avatar from './Avatars';
+import Avatars from './Avatars';
 import "./Shop.css";
 
 class Shop extends React.Component {
@@ -37,10 +37,10 @@ class Shop extends React.Component {
         return (
             <div>
                 <div className='shop'>
-                {this.state.items.map((el,index) => 
-                <ShopItem name={el.name} key={index} price={el.price} handleClick={(e) => this.handleButtonClick(e, index)} />)
-                }
-                <Avatar />
+                    {this.state.items.map((el,index) => 
+                    <ShopItem name={el.name} key={index} price={el.price} handleClick={(e) => this.handleButtonClick(e, index)} />)
+                    }
+                    <Avatars />
                 </div> 
             </div>
         );

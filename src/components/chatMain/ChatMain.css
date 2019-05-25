@@ -1,9 +1,11 @@
 #chat-main {
    flex-grow: 1;
-   max-height: 100%;
+   border-top: 1px solid #e8e8e8;
+   position: relative;
 }
 
 #chat-main form {
+   position: absolute;
    display: flex;
    flex-direction: column;
    width: 100%;
@@ -25,17 +27,30 @@
 
 #chat-main .chat-send {
    display: flex;
-   height: 34px;
+   height: 38px;
    flex-shrink: 0;
+   border: 1px solid #e8e8e8;
+   position: relative;
 }
 
 #chat-main input[type='text'] {
    flex-grow: 1;  
    font-size: 16px;
    padding: 0 10px;
+   border: none;
 }
 
 #chat-main input[type='submit'] {
    font-size: 16px;
-   padding: 0 10px;
+   padding: 0 15px;
+   border: none;
+   background-color: gray;
+   border-radius: 3px 0 0 3px;
+   color: white;
+   font-size: 20px;
+   position: absolute;
+   top: -1px;
+   right: -1px;
+   height: 38px;
+   cursor: pointer;
 }

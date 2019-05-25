@@ -1,0 +1,32 @@
+.keyWords {
+  margin: 5vh;
+}
+
+.keyWords__form-input {
+  width: 30vw;
+  border: none;
+  border-bottom: 2px solid grey;
+  transition: 0.3s;
+  margin: 10px;
+}
+.keyWords__form-input:focus {
+  border-bottom: 2px solid rosybrown;
+}
+
+.kewWords__skills__list-el {
+  padding-top: 15px;
+}
+
+.keyWords__form-button {
+  margin: 15px;
+  border-radius: 5px;
+  background-color: rosybrown;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.keyWords__skills__list-header {
+  font-weight: bold;
+}

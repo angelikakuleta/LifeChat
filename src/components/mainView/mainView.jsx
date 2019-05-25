@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CardView from "../Card/Card";
 import "./mainView.css";
 import "../../styles/App.css";
+import ChatView from "../ChatView";
 const io = require("socket.io-client");
 
 const socket = io.connect("http://localhost:3001");
@@ -23,11 +24,16 @@ export default class MainView extends Component {
       }
     ]
   };
-  componentDidMount() {
+  componentDidUpdate() {
     socket.on("chat", function(data) {
       this.setState({ quests: [...this.state.quests, data] });
     });
   }
+
+  openChat = () => {
+    console.log("otwieram chat");
+    return <ChatView />;
+  };
 
   createNewCard = el => {
     return (
@@ -41,12 +47,10 @@ export default class MainView extends Component {
       </li>
     );
   };
-  componentDidUpdate() {}
+
   render() {
     return (
-      <section className="mainView">
-        <div className="mainView__menu"></div>
-
+      <section className="mainView" onClick={this.openChat}>
         <ul className="mainView__cardList">
           {this.state.quests ? this.state.quests.map(this.createNewCard) : null}
         </ul>

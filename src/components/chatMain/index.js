@@ -89,7 +89,7 @@ export default class ChatMain extends Component {
    render() {
       return (
 
-         <section id='chat-main'>
+         <section id='chat-main' style={{ backgroundColor: "transparent" }}>
             <form onSubmit={this.handleClick}>
                <div ref={this.chatWindowRef} className='chat-window'>
                   <div className='output'>

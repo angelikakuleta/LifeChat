@@ -28,7 +28,6 @@ body {
   list-style: none;
   background-image: url('mbc.jpg');
   background-size: cover;
-  overflow-y: hidden;
 }
 
 #root {

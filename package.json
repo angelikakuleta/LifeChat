@@ -9,7 +9,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
-    "node": "^10.15.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",

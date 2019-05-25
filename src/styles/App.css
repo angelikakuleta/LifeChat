@@ -43,18 +43,18 @@ body {
 }
 
 html[data-theme="theme-dark"] {
-  --primary: rgb(35, 80, 63);
-  --primarydark: rgb(18, 22, 20);
+  --primary: rgb(215, 223, 220);
+  --primarydark: rgb(81, 83, 82);
   --secondary: rgb(107, 61, 119);
   --secondarydark: rgb(82, 46, 92);
   --fancy: rgb(209, 207, 202);
 }
 
 html[data-theme="theme-monster"] {
-  --primary: rgb(13, 31, 24);
-  --primarydark: rgb(18, 22, 20);
-  --secondary: rgb(139, 58, 58);
-  --secondarydark: rgb(99, 21, 27);
+  --primary: rgb(236, 93, 101);
+  --primarydark: rgb(163, 39, 63);
+  --secondary: rgb(190, 128, 128);
+  --secondarydark: rgb(141, 99, 102);
   --fancy: rgb(209, 207, 202);
 }
 

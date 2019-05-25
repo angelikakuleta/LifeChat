@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Icon, Button } from 'antd';
 import "antd/dist/antd.css";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class MenuViewMobile extends React.Component {
     state = {
@@ -13,16 +13,22 @@ class MenuViewMobile extends React.Component {
         collapsed: !this.state.collapsed,
       });
     };
+
+  handleClick = (e) => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  }
   
     render() {
     return (
-        <Router>
         <div style={{ width: '100%' }}>
             <Button className="burger" type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
             <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
             </Button>
            {this.state.collapsed ? null :  <Menu className="menu"
             style={{ height: '100vh' }}
+            onClick={this.handleClick} 
             defaultSelectedKeys={['1']} 
             defaultOpenKeys={this.state.collapsed}
             mode="inline"
@@ -69,8 +75,7 @@ class MenuViewMobile extends React.Component {
             </Menu.Item>
         </Menu>
            }
-        </div>
-        </Router>     
+        </div>    
     )
     }
 }

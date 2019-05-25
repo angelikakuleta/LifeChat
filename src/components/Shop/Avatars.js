@@ -15,7 +15,7 @@ const Avatars = (props) => {
 
         return (
             <Card title={props.name}>
-            <img src={avatar1} alt="buy_avatars" style={{}} /> 
+            <img src={avatar1} alt="buy_avatars" style={{"width":"50%", "height":"50%"}} /> 
             <Button onClick={props.handleClick}>See more</Button>
          </Card>
         )

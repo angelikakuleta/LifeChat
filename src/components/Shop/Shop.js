@@ -12,10 +12,36 @@ class Shop extends React.Component {
             {name: "theme", price:"54" },
             {name: "theme", price:"54" }
         ],
-        user: {money: 700, 
+        user: {money: 700,
             itemsBought: []
+        }
+       
         } 
-    }
+    
+
+    // async componentDidMount() {
+    //     const token = localStorage.getItem("x-auth-token");
+    //     const requestHeaders = {
+    //       "Content-Type": "application/json; charset=UTF-8",
+    //       "x-auth-token": token
+    //     };
+    
+    //     try {
+    //       let response = await fetch(`/addGold`, {
+    //         method: "get",
+    //         headers: requestHeaders,
+    //         body: {email: "test@gmail.com"}
+    //       });
+    //       if (response.status !== 200) throw response;
+    //       console.log("przyszło");
+    //       response = await response.json();
+    //       this.setState({
+    //         userMoney: response
+    //       });
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   }
 
     handleButtonClick = (e, index) => {
         if (this.state.items[index].price > this.state.user.money) {
@@ -30,8 +56,8 @@ class Shop extends React.Component {
                 }
             ))
         }
-
     }
+
 
     render() {
         return (

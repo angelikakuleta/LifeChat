@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
    exp: { type: Number, default: 0 }
 });
 
-userSchema.methods.genToken = () => {
+userSchema.methods.genToken = function () {
    return jwt.sign({ _id: this._id }, 'test');
 }
 

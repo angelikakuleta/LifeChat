@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth')
 
 const { User } = require('../models/userModel');
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     let user;
-    user = await User.findOne({ email: req.body.email.toLowerCase() });
+    user = await User.findById(req.user);
     res.json(user.keywords);
 
 })

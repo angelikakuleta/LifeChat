@@ -28,10 +28,6 @@ section{
     background: var(--fancy);
 }
 
-li.ant-menu-item.ant-menu-item-selected a::before {
-  
-}
-
 li.ant-menu-item-selected {
     color: rgba(0, 0, 0, 0.65) !important;
     border-bottom: 2px solid var(--secondarydark) !important;

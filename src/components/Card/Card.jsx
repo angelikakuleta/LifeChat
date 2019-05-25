@@ -3,6 +3,7 @@ import Card from "antd/lib/card";
 import { Avatar } from "antd";
 import "./Card.css";
 import "../../styles/App.css";
+import ChatView from '../ChatView';
 import avatar1 from "../../assets/avatars/pipo-enemy1.png";
 import avatar2 from "../../assets/avatars/pipo-enemy2.png";
 import avatar3 from "../../assets/avatars/pipo-enemy3.png";
@@ -30,6 +31,11 @@ const avatarArray = [
 ];
 
 export default class CardView extends Component {
+  state = { renderChat: false };
+  handleClick = () => {
+    this.setState({ renderChat: true })
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -45,8 +51,11 @@ export default class CardView extends Component {
   }
 
   render() {
-    return (
-      <Card className="card">
+    let jsx;
+    if (this.state.renderChat) {
+      jsx = <ChatView />
+    } else {
+      jsx = <Card className="card" onClick={this.handleClick}>
         <div className="wrapper">
           <Avatar
             className="avatar"
@@ -63,6 +72,10 @@ export default class CardView extends Component {
           </div>
         </div>
       </Card>
+    }
+
+    return (
+      jsx
     );
   }
 }

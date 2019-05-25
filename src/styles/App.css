@@ -66,13 +66,6 @@ html[data-theme="theme-snake"] {
   --primarydark: rgb(78, 231, 154);
   --secondary: rgb(176, 197, 125);
   --secondarydark: rgb(148, 179, 76);
-  --fancy: rgb(209, 207, 202);
+  --fancy: rgb(169, 192, 151);
 }
 
-html[data-theme="theme-ghost"] {
-  --primary: rgb(91, 117, 107);
-  --primarydark: rgb(110, 133, 121);
-  --secondary: rgb(107, 139, 143);
-  --secondarydark: rgb(52, 62, 66);
-  --fancy: rgb(209, 207, 202);
-}

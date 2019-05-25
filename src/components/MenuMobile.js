@@ -17,7 +17,7 @@ class MenuViewMobile extends React.Component {
     render() {
     return (
         <Router>
-        <div style={{ width: '100vw' }}>
+        <div style={{ width: '100%' }}>
             <Button className="burger" type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
             <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
             </Button>

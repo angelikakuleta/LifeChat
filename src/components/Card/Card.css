@@ -1,5 +1,5 @@
 @import "~antd/dist/antd.css";
-.card{
+.card {
     background: var(--primarydark);
     border: transparent;
     border-radius: 10em 0 0 10em;
@@ -13,7 +13,25 @@
 
 .info {
     margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
 }
 
 .info .name {
+    font-weight: bold;
+    margin-right: 1fr;
+}
+
+.ant-card-body {
+    padding: 0;
+}
+
+.avatar {
+    /* background: var(--primarydark); */
 }

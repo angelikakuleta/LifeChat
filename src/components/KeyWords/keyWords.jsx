@@ -30,8 +30,7 @@ export default class KeyWords extends Component {
       if (response.status !== 200) throw response;
       console.log("przyszło");
       response = await response.json();
-      console.log(response);
-      this.setState({ keyWords: response.keyWords });
+      this.setState({ keyWords: response });
     } catch (error) {
       console.log(error);
     }

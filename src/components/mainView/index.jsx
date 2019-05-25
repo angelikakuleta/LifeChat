@@ -37,7 +37,6 @@ export default class MainView extends Component {
 
   refresh = () => {
     socket.on("chat", ({ handle, message }) => {
-      console.log(handle);
 
       if (this.state.handlers.includes(handle)) {
         return;
@@ -56,7 +55,11 @@ export default class MainView extends Component {
     console.log(el);
     return (
       <li className="mainView__cardList-el" key={Math.random()}>
-        <Link to="/chat">
+        <Link to={{
+          pathname: "/chat",
+          name: el.name
+        }}
+        >
           <CardView
             name={el.name}
             date={el.date}

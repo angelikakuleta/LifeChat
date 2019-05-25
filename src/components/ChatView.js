@@ -3,16 +3,26 @@ import ChatMain from "./chatMain";
 import ChatUserData from "./chatUserData";
 import ChatKeyWords from "./chatKeyWords";
 import "../styles/ChatView.css";
+const io = require("socket.io-client");
+
+const socket = io.connect("http://localhost:3001");
 
 export default class ChatView extends Component {
-  state = {
-    keywords: ["help", "money", "cash", "hack", "jfds"],
-    name: "Śmiertelnik_numer_666"
-  };
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.state = {
+      keywords: ["help", "money", "cash", "hack", "jfds"],
+      name: this.props.location.name
+    };
+
+  }
+
   async componentDidMount() {
-    const name = localStorage.getItem("email");
-    console.log(name);
-    this.setState({ name: name });
+    // const name = localStorage.getItem("email");
+    // console.log(name);
+    // this.setState({ name: this.props.name });
+    // console.log(this.props.location.name)
     console.log("montuje");
     const token = localStorage.getItem("x-auth-token");
     const requestHeaders = {
@@ -42,10 +52,9 @@ export default class ChatView extends Component {
       <div id="chat-view">
         <ChatUserData
           name={this.state.name}
-          // email={this.state.name + "@mycompany.com"}
         />
         <ChatKeyWords keywords={this.state.keywords} />
-        <ChatMain keywords={this.state.keywords} />
+        <ChatMain name={this.state.name} keywords={this.state.keywords} />
       </div>
     );
   }

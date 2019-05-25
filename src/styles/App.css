@@ -13,12 +13,15 @@ body, p, form, input, button {
   margin: 0;
   padding: 0;
   outline: none;
+  border: 0;
 }
 
 body { 
   font-family: -apple-system, BlinkMacSystemFont, "Overpass Mono", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   list-style: none;
+  background-image: url('mbc.jpg');
+  background-size: cover;
 }
 
 #root {

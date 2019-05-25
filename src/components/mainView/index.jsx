@@ -57,7 +57,8 @@ export default class MainView extends Component {
       <li className="mainView__cardList-el" key={Math.random()}>
         <Link to={{
           pathname: "/chat",
-          name: el.name
+          name: el.name,
+          message: el.message
         }}
         >
           <CardView

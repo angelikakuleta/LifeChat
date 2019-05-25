@@ -13,7 +13,8 @@ export default class ChatView extends Component {
     this.props = props;
     this.state = {
       keywords: ["help", "money", "cash", "hack", "jfds"],
-      name: this.props.location.name
+      name: this.props.location.name,
+      message: this.props.location.message
     };
 
   }
@@ -54,7 +55,7 @@ export default class ChatView extends Component {
           name={this.state.name}
         />
         <ChatKeyWords keywords={this.state.keywords} />
-        <ChatMain name={this.state.name} keywords={this.state.keywords} />
+        <ChatMain name={this.state.name} message={this.state.message} keywords={this.state.keywords} />
       </div>
     );
   }

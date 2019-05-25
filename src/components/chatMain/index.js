@@ -46,6 +46,7 @@ export default class ChatMain extends Component {
    }
    componentDidMount() {
       this.setState({ socket })
+      this.setState({ output: [...this.state.output, { handle: this.props.name, message: this.props.message }] })
       socket.on('connect', () => {
          console.log('Connected');
       })

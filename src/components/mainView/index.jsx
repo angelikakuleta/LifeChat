@@ -19,13 +19,13 @@ export default class MainView extends Component {
           name: "Tomasz",
           message: "Dzień dobry",
           priority: "Wysoki",
-          date: "15/10/2019"
+          date: "05/25/2019"
         },
         {
           name: "Bozena",
           message: "Jak powinnam zrobić to?",
           priority: "Wysoki",
-          date: "15/10/2019"
+          date: "05/25/2019"
         }
       ]
     };
@@ -36,15 +36,21 @@ export default class MainView extends Component {
   refresh = () => {
     socket.on("chat", ({ handle, message }) => {
       var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
       var yyyy = today.getFullYear();
 
-      today = mm + '/' + dd + '/' + yyyy;
+      today = mm + "/" + dd + "/" + yyyy;
       if (this.state.handlers.includes(handle)) {
         return;
       } else {
-        this.setState({ handlers: [...this.state.quests, handle], quests: [...this.state.quests, { name: handle, message: message, date: today }] });
+        this.setState({
+          handlers: [...this.state.quests, handle],
+          quests: [
+            ...this.state.quests,
+            { name: handle, message: message, date: today }
+          ]
+        });
       }
     });
   };

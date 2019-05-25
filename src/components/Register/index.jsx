@@ -98,7 +98,7 @@ export default class Register extends React.Component {
         response.headers.get("x-auth-token")
       );
       response = await response.json();
-      console.log(response);
+      this.props.changeLoggedStatus(true);
     } catch (err) {
       console.log(err);
       if ([404, 400].includes(err.status)) {

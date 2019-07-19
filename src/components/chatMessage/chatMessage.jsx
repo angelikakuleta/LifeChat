@@ -52,7 +52,6 @@ class ChatMessage extends React.Component {
       if (response.status !== 200) throw response;
       console.log("poszło");
       response = await response.json();
-      console.log(response);
     } catch (error) {
       return;
     }

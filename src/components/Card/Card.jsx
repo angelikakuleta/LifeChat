@@ -47,7 +47,6 @@ export default class CardView extends Component {
     const randomNumber = Math.floor(Math.random() * 11);
     const numberOfAvatar = avatarArray[randomNumber];
     this.setState({ numberOfAvatar: numberOfAvatar });
-    console.log(this.state);
   }
 
   render() {

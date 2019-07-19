@@ -69,7 +69,6 @@ export default class KeyWords extends Component {
         if (response.status !== 200) throw response;
         console.log("poszło");
         response = await response.json();
-        console.log(response);
         // const newSkill = this.state.newKeyWord;
         // this.setState({ keyWords: [...this.state.keyWords, newSkill] });
         // input.value = "";
@@ -116,17 +115,18 @@ export default class KeyWords extends Component {
             </List>
           </div>
         </div>
-        {this.state.keyWords.length < 5 &&
-        <form className="keyWords__form" action="">
-          <input
-            className="keyWords__form-input"
-            placeholder="Wpisz zaklęcie"
-            maxlength="10"
-          />
-          <button className="keyWords__form-button" onClick={this.saveSkill}>
-            Dodaj zaklęcie
-          </button>
-        </form>}
+        {this.state.keyWords.length < 5 && (
+          <form className="keyWords__form" action="">
+            <input
+              className="keyWords__form-input"
+              placeholder="Wpisz zaklęcie"
+              maxlength="10"
+            />
+            <button className="keyWords__form-button" onClick={this.saveSkill}>
+              Dodaj zaklęcie
+            </button>
+          </form>
+        )}
       </section>
     );
   }

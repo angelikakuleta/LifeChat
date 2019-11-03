@@ -1,4 +1,3 @@
-![LifeChat](https://github.com/AngelikaKuleta/LifeChat/blob/master/public/firstView-chat.JPG)
 # LifeChat
 App is live chat from chat center. It's use for reduction stress and raises morale. App created on 12h heckaton and it had a 3rd place.
 
